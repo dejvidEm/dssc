@@ -1,5 +1,7 @@
 "use client"
 import Image from "next/image";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { useLanguage } from '@/hooks/use-language';
 
 interface Advantage {
@@ -45,39 +47,95 @@ switch (val) {
 }
  
 const FeatureItem = ({ id, title, description, advantages, icon, image }: FeatureItemProps) => {
-return (
-    <div className={`flex flex-col md:items-center gap-10 lg:gap-14 ${id%2===0? "md:flex-row" :"md:flex-row-reverse"}`}>
-        <div className="md:w-[48%] xl:w-[45%] md:py-6 xl:py-12 space-y-8">
-            <div className="space-y-6">
-                <span className="p-2 rounded-md bg-purple-100 text-purple-700 dark:bg-gray-900 dark:text-purple-500 flex w-max">
-                    {iconRender(icon)}
-                </span>
-                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
-                    {title}
-                </h2>
-                <p className="text-gray-700 dark:text-gray-300">
-                    {description}
-                </p>
-            </div>
-            <ul role="list" className="space-y-5 children:flex children:items-start children:gap-4 children:text-gray-600 dark:children:text-gray-400">
-                {
-                    advantages.map((advantage: Advantage) => (
-                        <li key={advantage.id}>
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 fill-purple-600 dark:fill-purple-500">
-                                <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                            </svg>
-                            {advantage.text}
-                        </li>
-                    ))
-                }
-            </ul>
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  
+  // Alternate direction: odd IDs from left, even IDs from right
+  const isEven = id % 2 === 0
+  const initialX = isEven ? 60 : -60
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: initialX }}
+      animate={
+        isInView
+          ? { opacity: 1, x: 0 }
+          : { opacity: 0, x: initialX }
+      }
+      transition={{
+        duration: 0.7,
+        ease: [0.21, 0.47, 0.32, 0.98],
+      }}
+      className={`flex flex-col md:items-center gap-10 lg:gap-14 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={
+          isInView
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: 20 }
+        }
+        transition={{
+          duration: 0.6,
+          delay: 0.2,
+          ease: [0.21, 0.47, 0.32, 0.98],
+        }}
+        className="md:w-[48%] xl:w-[45%] md:py-6 xl:py-12 space-y-8"
+      >
+        <div className="space-y-6">
+          <span className="p-2 rounded-md bg-primary/10 text-primary flex w-max">
+            {iconRender(icon)}
+          </span>
+          <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+            {title}
+          </h2>
+          <p className="text-gray-700 dark:text-gray-300">
+            {description}
+          </p>
         </div>
-        <div className="flex-1 relative bg-primary/10 
-                  p-6 rounded-lg aspect-[4/2.4] overflow-hidden border border-primary/20">
-            <Image src={image} alt="illustration" width={1800} height={1200} className="w-full h-auto" />
-        </div>
-    </div>
-)
+        <ul role="list" className="space-y-5 children:flex children:items-start children:gap-4 children:text-gray-600 dark:children:text-gray-400">
+          {advantages.map((advantage: Advantage, index: number) => (
+            <motion.li
+              key={advantage.id}
+              initial={{ opacity: 0, x: -10 }}
+              animate={
+                isInView
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: -10 }
+              }
+              transition={{
+                duration: 0.4,
+                delay: 0.3 + index * 0.1,
+                ease: [0.21, 0.47, 0.32, 0.98],
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 fill-primary">
+                <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+              </svg>
+              {advantage.text}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={
+          isInView
+            ? { opacity: 1, scale: 1 }
+            : { opacity: 0, scale: 0.95 }
+        }
+        transition={{
+          duration: 0.6,
+          delay: 0.3,
+          ease: [0.21, 0.47, 0.32, 0.98],
+        }}
+        className="flex-1 relative bg-primary/10 p-6 rounded-lg aspect-[4/2.4] overflow-hidden border border-primary/20"
+      >
+        <Image src={image} alt="illustration" width={1800} height={1200} className="w-full h-auto" />
+      </motion.div>
+    </motion.div>
+  )
 }
 const getFeaturesFromTranslations = (t: any): Feature[] => [
 {
@@ -148,20 +206,35 @@ const getFeaturesFromTranslations = (t: any): Feature[] => [
 const Features = () => {
   const { t } = useLanguage()
   const features = getFeaturesFromTranslations(t)
+  const headerRef = useRef(null)
+  const isHeaderInView = useInView(headerRef, { once: true, margin: "-50px" })
   
   return (
     <section className="py-32">
         <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
             <div className="flex flex-col  space-y-16">
-                <div className="flex flex-col justify-center text-center  mx-auto md:max-w-2xl space-y-5">
-                    <span className="rounded-lg bg-blue-100 dark:bg-gray-900 px-2.5 py-1 text-xs w-max mx-auto font-semibold tracking-wide text-purple-800 dark:text-gray-100">{t.features.title}</span>
-                    <h1 className="text-3xl font-semibold text-blue-950 dark:text-gray-200 md:text-4xl xl:text-5xl leading-tight">
+                <motion.div
+                  ref={headerRef}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={
+                    isHeaderInView
+                      ? { opacity: 1, y: 0 }
+                      : { opacity: 0, y: 30 }
+                  }
+                  transition={{
+                    duration: 0.6,
+                    ease: [0.21, 0.47, 0.32, 0.98],
+                  }}
+                  className="flex flex-col justify-center text-center  mx-auto md:max-w-2xl space-y-5"
+                >
+                    <span className="rounded-lg bg-primary/10 px-2.5 py-1 text-xs w-max mx-auto font-semibold tracking-wide text-primary">{t.features.title}</span>
+                    <h1 className="text-3xl font-semibold text-foreground md:text-4xl xl:text-5xl leading-tight">
                         {t.features.subtitle}
                     </h1>
-                    <p className="text-gray-700 dark:text-gray-300 max-w-lg mx-auto">
+                    <p className="text-muted-foreground max-w-lg mx-auto">
                         {t.features.description}
                     </p>
-                </div>
+                </motion.div>
                 <div className="grid divide-y divide-gray-300/60 dark:divide-gray-800/30 gap-12 children:py-5 first:pt-0 last:pb-0">
                     {
                         features.map(feature=>(
