@@ -2,6 +2,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
+import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
 import { Mail, Phone, MapPin, Clock } from "lucide-react"
 
@@ -38,18 +39,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl mb-6">
-              {t.contact.title}
-            </h1>
-            <p className="text-lg text-muted-foreground text-pretty sm:text-xl lg:text-2xl leading-relaxed">
-              {t.contact.description}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t.contact.title} description={t.contact.description} />
 
       {/* Contact Information */}
       <section className="py-24">
@@ -91,7 +81,7 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="aspect-video rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <div className="aspect-video rounded-lg bg-primary/10 flex items-center justify-center border-2 border-primary/20">
                     <div className="text-center space-y-2">
                       <MapPin className="h-12 w-12 text-primary mx-auto" />
                       <p className="text-lg font-semibold">
@@ -146,9 +136,9 @@ export default function ContactPage() {
         <div className="container text-center">
           <div className="mx-auto max-w-3xl space-y-8">
             <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
-              {t.contact.cta.title}
+              {t.cta.title}
             </h2>
-            <p className="text-lg text-muted-foreground text-pretty sm:text-xl">{t.contact.cta.subtitle}</p>
+            <p className="text-lg text-muted-foreground text-pretty sm:text-xl">{t.cta.subtitle}</p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <Card className="p-6 border-0 shadow-lg">
                 <div className="flex items-center gap-4">
@@ -158,7 +148,7 @@ export default function ContactPage() {
                   <div className="text-left">
                     <p className="font-semibold">
                       {/* Replaced hardcoded text with translation */}
-                      {t.contact.cta.callDirect}
+                      {t.contact.info.phone.title}
                     </p>
                     <p className="text-sm text-muted-foreground">+421 123 456 789</p>
                   </div>
@@ -172,7 +162,7 @@ export default function ContactPage() {
                   <div className="text-left">
                     <p className="font-semibold">
                       {/* Replaced hardcoded text with translation */}
-                      {t.contact.cta.emailUs}
+                      {t.contact.info.email.title}
                     </p>
                     <p className="text-sm text-muted-foreground">info@company.com</p>
                   </div>

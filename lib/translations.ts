@@ -5,12 +5,43 @@ export interface Translations {
     home: string
     about: string
     services: string
+    gallery: string
     contact: string
   }
   hero: {
     title: string
     subtitle: string
-    cta: string
+    description: string
+    cta1: string
+    cta2: string
+    employees: string
+    reviews: string
+  }
+  features: {
+    title: string
+    subtitle: string
+    description: string
+    feature1: {
+      title: string
+      description: string
+      advantage1: string
+      advantage2: string
+      advantage3: string
+    }
+    feature2: {
+      title: string
+      description: string
+      advantage1: string
+      advantage2: string
+      advantage3: string
+    }
+    feature3: {
+      title: string
+      description: string
+      advantage1: string
+      advantage2: string
+      advantage3: string
+    }
   }
   testimonials: {
     title: string
@@ -122,10 +153,6 @@ export interface Translations {
         description: string
       }
     }
-    cta: {
-      title: string
-      subtitle: string
-    }
   }
   contact: {
     title: string
@@ -175,14 +202,62 @@ export interface Translations {
         answer: string
       }
     }
-    cta: {
-      title: string
-      subtitle: string
-      callDirect: string
-      emailUs: string
-    }
+  }
+  heading: {
+    defaultTitle: string
+    defaultButton: string
+  }
+  cta: {
+    title: string
+    subtitle: string
+    primaryButton: string
+    secondaryButton: string
+    feature1: string
+    feature2: string
+    feature3: string
   }
   footer: {
+    companyName: string
+    description: string
+    services: {
+      title: string
+      items: {
+        climateControl: string
+        security: string
+        flexibleRental: string
+        onlineManagement: string
+        movingSupplies: string
+      }
+    }
+    company: {
+      title: string
+      items: {
+        about: string
+        locations: string
+        contact: string
+        careers: string
+        news: string
+      }
+    }
+    support: {
+      title: string
+      items: {
+        helpCenter: string
+        faq: string
+        contactSupport: string
+        storageGuide: string
+        movingTips: string
+      }
+    }
+    legal: {
+      title: string
+      items: {
+        privacy: string
+        terms: string
+        accessibility: string
+        sitemap: string
+      }
+    }
     copyright: string
     rights: string
   }
@@ -194,12 +269,43 @@ export const translations: Record<Language, Translations> = {
       home: "Domov",
       about: "O nás",
       services: "Služby",
+      gallery: "Galéria",
       contact: "Kontakt",
     },
     hero: {
-      title: "Vitajte v našej spoločnosti",
-      subtitle: "Poskytujeme profesionálne služby pre váš úspech",
-      cta: "Začať teraz",
+      title: "Bezpečné, čisté a pohodlné",
+      subtitle: "Samoobslužné skladovanie",
+      description: "Skladujte svoje veci bezpečne v našich moderných zariadeniach. Klimatizované jednotky, 24/7 bezpečnosť a flexibilné možnosti prenájmu pre všetky vaše skladovacie potreby.",
+      cta1: "Rezervovať jednotku",
+      cta2: "Zobraziť ceny",
+      employees: "45+ zamestnancov",
+      reviews: "5.0 (2.5k recenzií)",
+    },
+    features: {
+      title: "Funkcie",
+      subtitle: "Prémiové skladovacie riešenia navrhnuté pre váš pokoj",
+      description: "Zažite rozdiel s našimi modernými zariadeniami, pokročilými bezpečnostnými systémami a flexibilnými skladovacími možnosťami prispôsobenými všetkým vašim skladovacím potrebám.",
+      feature1: {
+        title: "Klimatizované skladovacie jednotky",
+        description: "Chráňte svoje cenné veci v našich moderných klimatizovaných skladovacích jednotkách, ktoré udržiavajú optimálnu teplotu a vlhkosť.",
+        advantage1: "Teplota kontrolovaná medzi 13-29°C",
+        advantage2: "Kontrola vlhkosti zabraňuje plesniam a hnilobe",
+        advantage3: "Ideálne pre elektroniku, dokumenty a nábytok",
+      },
+      feature2: {
+        title: "24/7 Bezpečnosť a kontrola prístupu",
+        description: "Vaše veci sú chránené 24 hodín denne s pokročilými bezpečnostnými systémami a kontrolovaným prístupom pre úplný pokoj.",
+        advantage1: "24/7 video dohľadové monitorovanie",
+        advantage2: "Elektronický prístup k bráne s osobnými kódmi",
+        advantage3: "Dobre osvetlené zariadenia pre bezpečný prístup kedykoľvek",
+      },
+      feature3: {
+        title: "Flexibilné možnosti prenájmu",
+        description: "Vyberte si z rôznych veľkostí jednotiek a podmienok prenájmu, ktoré vyhovujú vašim potrebám, s jednoduchým online správou a platbami.",
+        advantage1: "Rôzne veľkosti jednotiek od 5x5 do 10x30",
+        advantage2: "Mesačné nájomné zmluvy",
+        advantage3: "Online správa účtu a platby",
+      },
     },
     testimonials: {
       title: "Čo hovoria naši klienti",
@@ -315,10 +421,6 @@ export const translations: Record<Language, Translations> = {
           description: "Zabezpečenie kvality a spokojnosti klienta",
         },
       },
-      cta: {
-        title: "Pripravení začať?",
-        subtitle: "Poďme prediskutovať váš projekt a nájsť perfektné riešenie pre vaše potreby.",
-      },
     },
     contact: {
       title: "Kontaktujte nás",
@@ -368,15 +470,63 @@ export const translations: Record<Language, Translations> = {
           answer: "Poskytujeme služby v slovenčine, angličtine a nemčine pre našu rôznorodú klientelu.",
         },
       },
-      cta: {
-        title: "Pripravení začať váš projekt?",
-        subtitle: "Neváhajte nás kontaktovať. Sme tu, aby sme vám pomohli dosiahnuť vaše ciele.",
-        callDirect: "Zavolajte nám priamo",
-        emailUs: "Napíšte nám email",
-      },
+    },
+    heading: {
+      defaultTitle: "Skladovacie riešenia pre váš úspech",
+      defaultButton: "Začať teraz",
+    },
+    cta: {
+      title: "Pripravení začať s bezpečným skladovaním?",
+      subtitle: "Rezervujte si svoju skladovaciu jednotku ešte dnes a získajte prvý mesiac zdarma. Klimatizované jednotky, 24/7 bezpečnosť a flexibilné možnosti prenájmu.",
+      primaryButton: "Rezervovať jednotku",
+      secondaryButton: "Zobraziť ceny",
+      feature1: "Prvý mesiac zdarma",
+      feature2: "Bezpečnosť 24/7",
+      feature3: "Flexibilný prenájom",
     },
     footer: {
-      copyright: "© 2024 Naša spoločnosť.",
+      companyName: "DSSCompany",
+      description: "Bezpečné a pohodlné skladovacie riešenia pre všetky vaše potreby. Klimatizované jednotky, 24/7 bezpečnosť a flexibilné možnosti prenájmu.",
+      services: {
+        title: "Služby",
+        items: {
+          climateControl: "Klimatizované skladovanie",
+          security: "24/7 Bezpečnosť",
+          flexibleRental: "Flexibilný prenájom",
+          onlineManagement: "Online správa",
+          movingSupplies: "Presťahovacie potreby",
+        }
+      },
+      company: {
+        title: "Spoločnosť",
+        items: {
+          about: "O nás",
+          locations: "Lokality",
+          contact: "Kontakt",
+          careers: "Kariéra",
+          news: "Novinky",
+        }
+      },
+      support: {
+        title: "Podpora",
+        items: {
+          helpCenter: "Centrum pomoci",
+          faq: "Často kladené otázky",
+          contactSupport: "Kontaktovať podporu",
+          storageGuide: "Skladovací sprievodca",
+          movingTips: "Tipy na presťahovanie",
+        }
+      },
+      legal: {
+        title: "Právne informácie",
+        items: {
+          privacy: "Ochrana súkromia",
+          terms: "Podmienky",
+          accessibility: "Dostupnosť",
+          sitemap: "Mapa stránky",
+        }
+      },
+      copyright: "© 2024 DSSCompany.",
       rights: "Všetky práva vyhradené.",
     },
   },
@@ -385,12 +535,43 @@ export const translations: Record<Language, Translations> = {
       home: "Home",
       about: "About",
       services: "Services",
+      gallery: "Gallery",
       contact: "Contact",
     },
     hero: {
-      title: "Welcome to Our Company",
-      subtitle: "We provide professional services for your success",
-      cta: "Get Started",
+      title: "Secure, Clean & Convenient",
+      subtitle: "Self Storage",
+      description: "Store your belongings safely with our state-of-the-art facilities. Climate-controlled units, 24/7 security, and flexible rental options to meet all your storage needs.",
+      cta1: "Reserve Unit",
+      cta2: "View Pricing",
+      employees: "45+ employees",
+      reviews: "5.0 (2.5k reviews)",
+    },
+    features: {
+      title: "Features",
+      subtitle: "Premium Storage Solutions Designed for Your Peace of Mind",
+      description: "Experience the difference with our modern facilities, advanced security systems, and flexible storage options tailored to meet all your storage needs.",
+      feature1: {
+        title: "Climate-Controlled Storage Units",
+        description: "Protect your valuable belongings with our state-of-the-art climate-controlled storage units that maintain optimal temperature and humidity levels.",
+        advantage1: "Temperature controlled between 55-85°F",
+        advantage2: "Humidity control prevents mold and mildew",
+        advantage3: "Perfect for electronics, documents, and furniture",
+      },
+      feature2: {
+        title: "24/7 Security & Access Control",
+        description: "Your belongings are protected around the clock with advanced security systems and controlled access to ensure peace of mind.",
+        advantage1: "24/7 video surveillance monitoring",
+        advantage2: "Electronic gate access with personal codes",
+        advantage3: "Well-lit facilities for safe access anytime",
+      },
+      feature3: {
+        title: "Flexible Rental Options",
+        description: "Choose from various unit sizes and rental terms that fit your needs, with easy online management and payment options.",
+        advantage1: "Multiple unit sizes from 5x5 to 10x30",
+        advantage2: "Month-to-month rental agreements",
+        advantage3: "Online account management and payments",
+      },
     },
     testimonials: {
       title: "What Our Clients Say",
@@ -506,10 +687,6 @@ export const translations: Record<Language, Translations> = {
           description: "Ensuring quality and client satisfaction",
         },
       },
-      cta: {
-        title: "Ready to Get Started?",
-        subtitle: "Let's discuss your project and find the perfect solution for your needs.",
-      },
     },
     contact: {
       title: "Contact Us",
@@ -559,15 +736,63 @@ export const translations: Record<Language, Translations> = {
           answer: "We provide services in Slovak, English, and German to serve our diverse clientele.",
         },
       },
-      cta: {
-        title: "Ready to Start Your Project?",
-        subtitle: "Don't hesitate to reach out. We're here to help you achieve your goals.",
-        callDirect: "Call us directly",
-        emailUs: "Email us",
-      },
+    },
+    heading: {
+      defaultTitle: "Storage Solutions for Your Success",
+      defaultButton: "Get Started",
+    },
+    cta: {
+      title: "Ready to Start Secure Storage?",
+      subtitle: "Reserve your storage unit today and get your first month free. Climate-controlled units, 24/7 security, and flexible rental options.",
+      primaryButton: "Reserve Unit",
+      secondaryButton: "View Pricing",
+      feature1: "First month free",
+      feature2: "24/7 Security",
+      feature3: "Flexible rental",
     },
     footer: {
-      copyright: "© 2024 Our Company.",
+      companyName: "DSSCompany",
+      description: "Secure and convenient storage solutions for all your needs. Climate-controlled units, 24/7 security, and flexible rental options.",
+      services: {
+        title: "Services",
+        items: {
+          climateControl: "Climate-Controlled Storage",
+          security: "24/7 Security",
+          flexibleRental: "Flexible Rental",
+          onlineManagement: "Online Management",
+          movingSupplies: "Moving Supplies",
+        }
+      },
+      company: {
+        title: "Company",
+        items: {
+          about: "About Us",
+          locations: "Locations",
+          contact: "Contact",
+          careers: "Careers",
+          news: "News",
+        }
+      },
+      support: {
+        title: "Support",
+        items: {
+          helpCenter: "Help Center",
+          faq: "FAQ",
+          contactSupport: "Contact Support",
+          storageGuide: "Storage Guide",
+          movingTips: "Moving Tips",
+        }
+      },
+      legal: {
+        title: "Legal",
+        items: {
+          privacy: "Privacy Policy",
+          terms: "Terms of Service",
+          accessibility: "Accessibility",
+          sitemap: "Sitemap",
+        }
+      },
+      copyright: "© 2024 DSSCompany.",
       rights: "All rights reserved.",
     },
   },
@@ -576,12 +801,43 @@ export const translations: Record<Language, Translations> = {
       home: "Startseite",
       about: "Über uns",
       services: "Dienstleistungen",
+      gallery: "Galerie",
       contact: "Kontakt",
     },
     hero: {
-      title: "Willkommen in unserem Unternehmen",
-      subtitle: "Wir bieten professionelle Dienstleistungen für Ihren Erfolg",
-      cta: "Jetzt starten",
+      title: "Sicher, sauber & bequem",
+      subtitle: "Selbstlagerung",
+      description: "Lagern Sie Ihre Sachen sicher in unseren modernen Einrichtungen. Klimatisierte Einheiten, 24/7 Sicherheit und flexible Mietoptionen für alle Ihre Lagerbedürfnisse.",
+      cta1: "Einheit reservieren",
+      cta2: "Preise anzeigen",
+      employees: "45+ Mitarbeiter",
+      reviews: "5.0 (2.5k Bewertungen)",
+    },
+    features: {
+      title: "Funktionen",
+      subtitle: "Premium-Lagerlösungen für Ihren Seelenfrieden",
+      description: "Erleben Sie den Unterschied mit unseren modernen Einrichtungen, fortschrittlichen Sicherheitssystemen und flexiblen Lageroptionen, die auf alle Ihre Lagerbedürfnisse zugeschnitten sind.",
+      feature1: {
+        title: "Klimatisierte Lagerungseinheiten",
+        description: "Schützen Sie Ihre wertvollen Sachen mit unseren modernen klimatisierten Lagerungseinheiten, die optimale Temperatur und Luftfeuchtigkeit aufrechterhalten.",
+        advantage1: "Temperatur kontrolliert zwischen 13-29°C",
+        advantage2: "Luftfeuchtigkeitskontrolle verhindert Schimmel und Mehltau",
+        advantage3: "Perfekt für Elektronik, Dokumente und Möbel",
+      },
+      feature2: {
+        title: "24/7 Sicherheit & Zugangskontrolle",
+        description: "Ihre Sachen sind rund um die Uhr mit fortschrittlichen Sicherheitssystemen und kontrolliertem Zugang geschützt, um Seelenfrieden zu gewährleisten.",
+        advantage1: "24/7 Videoüberwachung",
+        advantage2: "Elektronischer Torzugang mit persönlichen Codes",
+        advantage3: "Gut beleuchtete Einrichtungen für sicheren Zugang jederzeit",
+      },
+      feature3: {
+        title: "Flexible Mietoptionen",
+        description: "Wählen Sie aus verschiedenen Einheitsgrößen und Mietbedingungen, die Ihren Bedürfnissen entsprechen, mit einfachem Online-Management und Zahlungsoptionen.",
+        advantage1: "Verschiedene Einheitsgrößen von 5x5 bis 10x30",
+        advantage2: "Monat-zu-Monat Mietverträge",
+        advantage3: "Online-Kontoverwaltung und Zahlungen",
+      },
     },
     testimonials: {
       title: "Was unsere Kunden sagen",
@@ -697,10 +953,6 @@ export const translations: Record<Language, Translations> = {
           description: "Sicherstellung von Qualität und Kundenzufriedenheit",
         },
       },
-      cta: {
-        title: "Bereit anzufangen?",
-        subtitle: "Lassen Sie uns Ihr Projekt besprechen und die perfekte Lösung für Ihre Bedürfnisse finden.",
-      },
     },
     contact: {
       title: "Kontaktieren Sie uns",
@@ -751,16 +1003,63 @@ export const translations: Record<Language, Translations> = {
             "Wir bieten Dienstleistungen in Slowakisch, Englisch und Deutsch an, um unsere vielfältige Kundschaft zu bedienen.",
         },
       },
-      cta: {
-        title: "Bereit, Ihr Projekt zu starten?",
-        subtitle:
-          "Zögern Sie nicht, uns zu kontaktieren. Wir sind hier, um Ihnen bei der Erreichung Ihrer Ziele zu helfen.",
-        callDirect: "Rufen Sie uns direkt an",
-        emailUs: "Schreiben Sie uns eine E-Mail",
-      },
+    },
+    heading: {
+      defaultTitle: "Lagerlösungen für Ihren Erfolg",
+      defaultButton: "Loslegen",
+    },
+    cta: {
+      title: "Bereit für sicheres Lagern?",
+      subtitle: "Reservieren Sie heute Ihre Lagereinheit und erhalten Sie den ersten Monat kostenlos. Klimatisierte Einheiten, 24/7 Sicherheit und flexible Mietoptionen.",
+      primaryButton: "Einheit reservieren",
+      secondaryButton: "Preise anzeigen",
+      feature1: "Erster Monat kostenlos",
+      feature2: "24/7 Sicherheit",
+      feature3: "Flexible Miete",
     },
     footer: {
-      copyright: "© 2024 Unser Unternehmen.",
+      companyName: "DSSCompany",
+      description: "Sichere und bequeme Lagerlösungen für alle Ihre Bedürfnisse. Klimatisierte Einheiten, 24/7 Sicherheit und flexible Mietoptionen.",
+      services: {
+        title: "Dienstleistungen",
+        items: {
+          climateControl: "Klimatisierte Lagerung",
+          security: "24/7 Sicherheit",
+          flexibleRental: "Flexible Miete",
+          onlineManagement: "Online-Verwaltung",
+          movingSupplies: "Umzugsmaterialien",
+        }
+      },
+      company: {
+        title: "Unternehmen",
+        items: {
+          about: "Über uns",
+          locations: "Standorte",
+          contact: "Kontakt",
+          careers: "Karriere",
+          news: "Nachrichten",
+        }
+      },
+      support: {
+        title: "Support",
+        items: {
+          helpCenter: "Hilfezentrum",
+          faq: "FAQ",
+          contactSupport: "Support kontaktieren",
+          storageGuide: "Lagerführer",
+          movingTips: "Umzugstipps",
+        }
+      },
+      legal: {
+        title: "Rechtliches",
+        items: {
+          privacy: "Datenschutz",
+          terms: "Nutzungsbedingungen",
+          accessibility: "Barrierefreiheit",
+          sitemap: "Sitemap",
+        }
+      },
+      copyright: "© 2024 DSSCompany.",
       rights: "Alle Rechte vorbehalten.",
     },
   },

@@ -1,56 +1,178 @@
 "use client"
+import Image from "next/image";
+import { useLanguage } from '@/hooks/use-language';
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { useLanguage } from "@/hooks/use-language"
-import { CheckCircle, Users, Zap } from "lucide-react"
-
-export function FeaturesSection() {
-  const { t } = useLanguage()
-
-  const features = [
-    {
-      icon: CheckCircle,
-      title: t.services.service1.title,
-      description: t.services.service1.description,
-    },
-    {
-      icon: Users,
-      title: t.services.service2.title,
-      description: t.services.service2.description,
-    },
-    {
-      icon: Zap,
-      title: t.services.service3.title,
-      description: t.services.service3.description,
-    },
-  ]
-
-  return (
-    <section className="py-24 bg-muted/30">
-      <div className="container">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl mb-4">
-            {t.services.title}
-          </h2>
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">{t.services.description}</p>
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <CardHeader className="pb-4">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                  <feature.icon className="h-8 w-8 text-primary" />
-                </div>
-                <CardTitle className="text-xl">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base leading-relaxed">{feature.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+interface Advantage {
+  id: number;
+  text: string;
 }
+
+interface Feature {
+  id: number;
+  title: string;
+  description: string;
+  advantages: Advantage[];
+  icon: string;
+  image: string;
+}
+
+interface FeatureItemProps {
+  id: number;
+  title: string;
+  description: string;
+  advantages: Advantage[];
+  icon: string;
+  image: string;
+}
+
+const iconRender = (val: string) => {
+switch (val) {
+    case "cross":
+        return (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M2 3a1 1 0 00-1 1v1a1 1 0 001 1h16a1 1 0 001-1V4a1 1 0 00-1-1H2zm0 4.5h16l-.811 7.71a2 2 0 01-1.99 1.79H4.802a2 2 0 01-1.99-1.79L2 7.5zM10 9a.75.75 0 01.75.75v2.546l.943-1.048a.75.75 0 111.114 1.004l-2.25 2.5a.75.75 0 01-1.114 0l-2.25-2.5a.75.75 0 111.114-1.004l.943 1.048V9.75A.75.75 0 0110 9z" clipRule="evenodd" />
+            </svg>
+        )
+    case "sync":
+        return (
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5">
+                <path fillRule="evenodd" d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z" clipRule="evenodd" />
+            </svg>
+        )
+    default:
+        return <>No Icon</>;
+}
+}
+ 
+const FeatureItem = ({ id, title, description, advantages, icon, image }: FeatureItemProps) => {
+return (
+    <div className={`flex flex-col md:items-center gap-10 lg:gap-14 ${id%2===0? "md:flex-row" :"md:flex-row-reverse"}`}>
+        <div className="md:w-[48%] xl:w-[45%] md:py-6 xl:py-12 space-y-8">
+            <div className="space-y-6">
+                <span className="p-2 rounded-md bg-purple-100 text-purple-700 dark:bg-gray-900 dark:text-purple-500 flex w-max">
+                    {iconRender(icon)}
+                </span>
+                <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+                    {title}
+                </h2>
+                <p className="text-gray-700 dark:text-gray-300">
+                    {description}
+                </p>
+            </div>
+            <ul role="list" className="space-y-5 children:flex children:items-start children:gap-4 children:text-gray-600 dark:children:text-gray-400">
+                {
+                    advantages.map((advantage: Advantage) => (
+                        <li key={advantage.id}>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 fill-purple-600 dark:fill-purple-500">
+                                <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                            </svg>
+                            {advantage.text}
+                        </li>
+                    ))
+                }
+            </ul>
+        </div>
+        <div className="flex-1 relative bg-primary/10 
+                  p-6 rounded-lg aspect-[4/2.4] overflow-hidden border border-primary/20">
+            <Image src={image} alt="illustration" width={1800} height={1200} className="w-full h-auto" />
+        </div>
+    </div>
+)
+}
+const getFeaturesFromTranslations = (t: any): Feature[] => [
+{
+    id: 1,
+    title: t.features.feature1.title,
+    icon: "cross",
+    description: t.features.feature1.description,
+    advantages: [
+        {
+            id: 1,
+            text: t.features.feature1.advantage1
+        },
+        {
+            id: 2,
+            text: t.features.feature1.advantage2
+        },
+        {
+            id: 3,
+            text: t.features.feature1.advantage3
+        },
+    ],
+    image: "/placeholder.jpg"
+},
+{
+    id: 2,
+    title: t.features.feature2.title,
+    icon: "cross",
+    description: t.features.feature2.description,
+    advantages: [
+        {
+            id: 1,
+            text: t.features.feature2.advantage1
+        },
+        {
+            id: 2,
+            text: t.features.feature2.advantage2
+        },
+        {
+            id: 3,
+            text: t.features.feature2.advantage3
+        },
+    ],
+    image: "/placeholder.jpg"
+},
+{
+    id: 3,
+    title: t.features.feature3.title,
+    icon: "sync",
+    description: t.features.feature3.description,
+    advantages: [
+        {
+            id: 1,
+            text: t.features.feature3.advantage1
+        },
+        {
+            id: 2,
+            text: t.features.feature3.advantage2
+        },
+        {
+            id: 3,
+            text: t.features.feature3.advantage3
+        },
+    ],
+    image: "/placeholder.jpg"
+},
+]
+ 
+const Features = () => {
+  const { t } = useLanguage()
+  const features = getFeaturesFromTranslations(t)
+  
+  return (
+    <section className="py-32">
+        <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
+            <div className="flex flex-col  space-y-16">
+                <div className="flex flex-col justify-center text-center  mx-auto md:max-w-2xl space-y-5">
+                    <span className="rounded-lg bg-blue-100 dark:bg-gray-900 px-2.5 py-1 text-xs w-max mx-auto font-semibold tracking-wide text-purple-800 dark:text-gray-100">{t.features.title}</span>
+                    <h1 className="text-3xl font-semibold text-blue-950 dark:text-gray-200 md:text-4xl xl:text-5xl leading-tight">
+                        {t.features.subtitle}
+                    </h1>
+                    <p className="text-gray-700 dark:text-gray-300 max-w-lg mx-auto">
+                        {t.features.description}
+                    </p>
+                </div>
+                <div className="grid divide-y divide-gray-300/60 dark:divide-gray-800/30 gap-12 children:py-5 first:pt-0 last:pb-0">
+                    {
+                        features.map(feature=>(
+                            <FeatureItem key={feature.id} {...feature}/>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+)
+}
+ 
+export { Features as FeaturesSection }

@@ -8,7 +8,7 @@ import { type Language } from "@/lib/translations"
 
 const languages = [
   { code: "en" as Language, name: "English", flag: "🇬🇧" },
-  { code: "sk" as Language, name: "Slovenčina", flag: "🇸🇰" },
+  { code: "sk" as Language, name: "Slovak", flag: "🇸🇰" },
   { code: "de" as Language, name: "Deutsch", flag: "🇩🇪" },
 ]
 

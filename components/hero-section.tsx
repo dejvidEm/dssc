@@ -1,58 +1,49 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/hooks/use-language"
-import { ArrowRight, Play } from "lucide-react"
-import Link from "next/link"
-
-export function HeroSection() {
+import Image from 'next/image'
+import Link from 'next/link'
+import { useLanguage } from '@/hooks/use-language'
+ 
+export default function HeroSection() {
   const { t } = useLanguage()
-
+  
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[url('/abstract-geometric-pattern.png')] bg-cover bg-center" />
-      </div>
-
-      <div className="container relative z-10 text-center">
-        <div className="mx-auto max-w-4xl space-y-8">
-          {/* Main heading */}
-          <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl">
-            <span className="text-foreground">{t.hero.title}</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty sm:text-xl lg:text-2xl">
-            {t.hero.subtitle}
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
-            <Button asChild size="lg" className="text-lg px-8 py-6">
-              <Link href="/contact">
-                {t.hero.cta}
-                <ArrowRight className="ml-2 h-5 w-5" />
+    <section className="relative pt-10 xl:pt-14">
+        <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12">
+          <div className="mx-auto text-center lg:text-left flex flex-col max-w-3xl justify-center lg:justify-start lg:py-8 flex-1 lg:w-1/2 lg:max-w-none">
+            <h1 className="text-foreground text-4xl/snug sm:text-6xl/tight lg:text-5xl/tight xl:text-6xl/tight font-semibold text">
+              {t.hero.title} <span className="bg-primary/10 inline-block border border-primary/30 px-3 text-primary">{t.hero.subtitle}</span> Solutions
+            </h1>
+            <p className="mt-10 text-muted-foreground lg:text-lg max-w-2xl lg:max-w-none mx-auto">
+              {t.hero.description}
+            </p>
+            <div className="mt-10 flex gap-4 justify-center lg:justify-start flex-wrap">
+              <Link href="#" className="px-6 py-3 rounded-lg transition bg-primary text-primary-foreground hover:bg-primary/90">
+                <span className="relative">
+                  {t.hero.cta1}
+                </span>
               </Link>
-            </Button>
-
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Demo
-            </Button>
+              <Link href="#" className="px-6 py-3 rounded-lg transition bg-muted text-foreground hover:bg-muted/80 border border-border">
+                <span className="relative">
+                  {t.hero.cta2}
+                </span>
+              </Link>
+            </div>
           </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="h-6 w-4 rounded-full border-2 border-muted-foreground/30">
-            <div className="mx-auto mt-1 h-2 w-1 rounded-full bg-muted-foreground/50" />
+        <div className="flex flex-1 lg:w-1/2 relative max-w-3xl mx-auto lg:max-w-none">
+          <Image src="/placeholder.jpg" alt="happy team" width={1850} height={1200} className="lg:absolute w-full lg:inset-x-0 object-cover lg:h-full" />
+          <div className="absolute left-1/2 -translate-x-1/2 lg:-translate-x-0 -bottom-10 w-60 p-4 rounded-lg bg-card border border-border shadow-lg">
+            <div className="flex children:ring-4 children:ring-card children:w-9 children:h-9 children:object-cover children:-ml-1 children:rounded-full">
+              <Image src="/placeholder-user.jpg" alt="employee image" width={40} height={40} className="!-ml-0" />
+            </div>
+            <div>
+              <p className="text-lg font-semibold text-foreground">{t.hero.employees}</p>
+              <p className="text-muted-foreground flex">
+                <span className="text-yellow-500 text-xl">★</span> {t.hero.reviews}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-  )
+  </section>
+)
 }

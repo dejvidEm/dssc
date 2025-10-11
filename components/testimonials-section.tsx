@@ -35,10 +35,10 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-background to-muted/20">
+    <section className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-balance mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          <h2 className="text-4xl font-bold text-balance mb-4 text-primary">
             {t.testimonials.title}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">{t.testimonials.subtitle}</p>
@@ -63,7 +63,7 @@ export function TestimonialsSection() {
                         "{testimonial.content}"
                       </blockquote>
                       <div className="flex items-center">
-                        <div className="w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white font-semibold mr-4">
+                        <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-semibold mr-4">
                           {testimonial.name.charAt(0)}
                         </div>
                         <div>

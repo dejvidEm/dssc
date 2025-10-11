@@ -19,6 +19,7 @@ export function MobileMenu() {
     { href: "/", label: t.nav.home },
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
+    { href: "/gallery", label: t.nav.gallery },
     { href: "/contact", label: t.nav.contact },
   ]
 
@@ -33,7 +34,7 @@ export function MobileMenu() {
       <SheetContent side="top" className="w-full h-screen">
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between py-4">
-            <div className="text-xl font-bold text-primary">Logo</div>
+            <div className="text-xl font-bold text-primary">DSSCompany</div>
             <Button variant="ghost" size="sm" onClick={() => setOpen(false)}>
               <X className="h-5 w-5" />
             </Button>

@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
 import { CheckCircle, Users, Zap, ArrowRight, Clock, Shield, Lightbulb } from "lucide-react"
 import Link from "next/link"
@@ -73,18 +74,7 @@ export default function ServicesPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl mb-6">
-              {t.services.title}
-            </h1>
-            <p className="text-lg text-muted-foreground text-pretty sm:text-xl lg:text-2xl leading-relaxed">
-              {t.services.description}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t.services.title} description={t.services.description} />
 
       {/* Main Services */}
       <section className="py-24">
@@ -196,7 +186,7 @@ export default function ServicesPage() {
               },
             ].map((process, index) => (
               <div key={index} className="text-center space-y-4">
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-secondary text-primary-foreground font-bold text-lg">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-lg">
                   {process.step}
                 </div>
                 <h3 className="text-xl font-semibold">{process.title}</h3>
@@ -208,17 +198,17 @@ export default function ServicesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary to-secondary">
+      <section className="py-24 bg-primary">
         <div className="container text-center">
           <div className="mx-auto max-w-3xl space-y-8">
             <h2 className="text-3xl font-bold tracking-tight text-primary-foreground text-balance sm:text-4xl lg:text-5xl">
-              {t.services.cta.title}
+              {t.cta.title}
             </h2>
-            <p className="text-lg text-primary-foreground/90 text-pretty sm:text-xl">{t.services.cta.subtitle}</p>
+            <p className="text-lg text-primary-foreground/90 text-pretty sm:text-xl">{t.cta.subtitle}</p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
               <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
                 <Link href="/contact">
-                  {t.hero.cta}
+                  {t.cta.primaryButton}
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

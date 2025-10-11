@@ -1,6 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
 import { Target, Eye, Heart, Award } from "lucide-react"
 
@@ -36,18 +37,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="container">
-          <div className="mx-auto max-w-4xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-balance sm:text-5xl lg:text-6xl mb-6">
-              {t.about.title}
-            </h1>
-            <p className="text-lg text-muted-foreground text-pretty sm:text-xl lg:text-2xl leading-relaxed">
-              {t.about.description}
-            </p>
-          </div>
-        </div>
-      </section>
+      <PageHero title={t.about.title} description={t.about.description} />
 
       {/* Company Story */}
       <section className="py-24">
@@ -72,7 +62,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 p-8 flex items-center justify-center">
+              <div className="aspect-square rounded-2xl bg-primary/10 p-8 flex items-center justify-center border-2 border-primary/20">
                 <div className="text-center space-y-4">
                   <div className="text-6xl font-bold text-primary">10+</div>
                   <div className="text-lg font-semibold">Years of Excellence</div>
@@ -133,7 +123,7 @@ export default function AboutPage() {
             {[1, 2, 3].map((member) => (
               <Card key={member} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300">
                 <CardHeader className="pb-4">
-                  <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
                     <div className="text-2xl font-bold text-primary">
                       {member === 1 ? "JS" : member === 2 ? "AM" : "PK"}
                     </div>

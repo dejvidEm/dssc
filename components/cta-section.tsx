@@ -1,39 +1,62 @@
 "use client"
-
-import { Button } from "@/components/ui/button"
-import { useLanguage } from "@/hooks/use-language"
-import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { useLanguage } from '@/hooks/use-language'
 
-export function CtaSection() {
+const CtaSection = () => {
   const { t } = useLanguage()
-
+  
   return (
-    <section className="py-24 bg-gradient-to-r from-primary to-secondary">
-      <div className="container text-center">
-        <div className="mx-auto max-w-3xl space-y-8">
-          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground text-balance sm:text-4xl lg:text-5xl">
-            {t.contact.title}
-          </h2>
-          <p className="text-lg text-primary-foreground/90 text-pretty sm:text-xl">{t.contact.description}</p>
-          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
-            <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
-              <Link href="/contact">
-                {t.hero.cta}
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="outline"
-              className="text-lg px-8 py-6 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
+    <section className="py-20 bg-primary">
+      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
+        <div className="text-center space-y-8">
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
+              {t.cta.title}
+            </h2>
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+              {t.cta.subtitle}
+            </p>
+          </div>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link 
+              href="#" 
+              className="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
-              <Link href="/about">{t.nav.about}</Link>
-            </Button>
+              {t.cta.primaryButton}
+            </Link>
+            <Link 
+              href="#" 
+              className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors duration-200"
+            >
+              {t.cta.secondaryButton}
+            </Link>
+          </div>
+          
+          <div className="flex items-center justify-center space-x-8 text-primary-foreground/90">
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span>{t.cta.feature1}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span>{t.cta.feature2}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              </svg>
+              <span>{t.cta.feature3}</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
   )
 }
+
+export { CtaSection }

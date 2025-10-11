@@ -10,8 +10,8 @@ import { ScrollToTop } from "@/components/scroll-to-top"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
-  title: "Modern Business Website",
-  description: "Professional multilingual business website",
+  title: "DSSCompany - Professional Storage Solutions",
+  description: "DSSCompany provides professional storage solutions across Europe",
   generator: "v0.app",
 }
 
