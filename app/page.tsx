@@ -1,5 +1,6 @@
 import HeroSection from "@/components/hero-section"
 import { FeaturesSection } from "@/components/features-section"
+import { StatsSection } from "@/components/stats-section"
 import { EuropeanPresence } from "@/components/european-presence"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CtaSection } from "@/components/cta-section"
@@ -11,7 +12,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <FeaturesSection />
-
+      <StatsSection />
       <ScrollReveal delay={0.1}>
         <TestimonialsSection />
       </ScrollReveal>

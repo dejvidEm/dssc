@@ -1,5 +1,6 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { MobileMenu } from "@/components/mobile-menu"
@@ -10,6 +11,16 @@ import { cn } from "@/lib/utils"
 export function Navbar() {
   const pathname = usePathname()
   const { t } = useLanguage()
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navItems = [
     { href: "/", label: t.nav.home },
@@ -20,7 +31,14 @@ export function Navbar() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header 
+      className={cn(
+        "fixed top-0 z-50 w-full transition-all duration-300",
+        isScrolled 
+          ? "bg-background/80 backdrop-blur-md border-b shadow-sm" 
+          : "bg-background/95 backdrop-blur border-b"
+      )}
+    >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
           <div className="text-xl font-bold text-primary">DSSCompany</div>

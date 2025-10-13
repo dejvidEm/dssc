@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { ChevronDown } from 'lucide-react'
 import { useLanguage } from '@/hooks/use-language'
  
 export default function HeroSection() {
@@ -25,7 +26,7 @@ export default function HeroSection() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.21, 0.47, 0.32, 0.98]
+        ease: [0.21, 0.47, 0.32, 0.98] as const
       }
     }
   }
@@ -38,7 +39,7 @@ export default function HeroSection() {
       transition: {
         duration: 0.8,
         delay: 0.3,
-        ease: [0.21, 0.47, 0.32, 0.98]
+        ease: [0.21, 0.47, 0.32, 0.98] as const
       }
     }
   }
@@ -52,13 +53,20 @@ export default function HeroSection() {
       transition: {
         duration: 0.6,
         delay: 0.8,
-        ease: [0.21, 0.47, 0.32, 0.98]
+        ease: [0.21, 0.47, 0.32, 0.98] as const
       }
     }
   }
+
+  const scrollToNextSection = () => {
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    })
+  }
   
   return (
-    <section className="relative pt-10 xl:pt-14 overflow-hidden">
+    <section className="relative pt-10 xl:pt-14 pb-16 overflow-hidden">
         <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12">
           <motion.div 
             className="mx-auto text-center lg:text-left flex flex-col max-w-3xl justify-center lg:justify-start lg:py-8 flex-1 lg:w-1/2 lg:max-w-none"
@@ -93,16 +101,65 @@ export default function HeroSection() {
                 </span>
               </Link>
             </motion.div>
+
+            {/* Animated Scroll Indicator */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 0.6 }}
+              className="mt-8 flex justify-center lg:justify-start"
+            >
+              <button
+                onClick={scrollToNextSection}
+                className="relative w-14 h-14 rounded-full border-2 border-primary/30 hover:border-primary flex items-center justify-center transition-colors cursor-pointer group"
+                aria-label="Scroll down"
+              >
+                {/* Pulse ring effect */}
+                <motion.div
+                  className="absolute inset-0 rounded-full border-2 border-primary"
+                  animate={{
+                    scale: [1, 1.3],
+                    opacity: [0.6, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    ease: "easeOut",
+                  }}
+                />
+                
+                {/* Bouncing arrow */}
+                <motion.div
+                  animate={{
+                    y: [0, 4, 0],
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <ChevronDown className="w-5 h-5 text-primary" />
+                </motion.div>
+              </button>
+            </motion.div>
           </motion.div>
         <motion.div 
-          className="flex flex-1 lg:w-1/2 relative max-w-3xl mx-auto lg:max-w-none"
+          className="flex flex-1 lg:w-1/2 relative max-w-3xl mx-auto lg:max-w-none pb-16 lg:pb-20"
           variants={imageVariants}
           initial="hidden"
           animate="visible"
         >
-          <Image src="/placeholder.jpg" alt="happy team" width={1850} height={1200} className="lg:absolute w-full lg:inset-x-0 object-cover lg:h-full rounded-lg" />
+          <div className="relative w-full h-[400px] lg:h-[500px]">
+            <Image 
+              src="/placeholder.jpg" 
+              alt="happy team" 
+              fill
+              className="object-cover rounded-lg" 
+            />
+          </div>
           <motion.div 
-            className="absolute left-1/2 -translate-x-1/2 lg:-translate-x-0 -bottom-10 w-60 p-4 rounded-lg bg-card border border-border shadow-lg"
+            className="absolute left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 bottom-16 w-60 p-4 rounded-lg bg-card border border-border shadow-lg"
             variants={statsVariants}
             initial="hidden"
             animate="visible"

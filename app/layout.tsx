@@ -29,7 +29,7 @@ export default function RootLayout({
             <Suspense fallback={<div>Loading...</div>}>
               <Navbar />
             </Suspense>
-            <main className="flex-1">{children}</main>
+            <main className="flex-1 pt-16">{children}</main>
             <Suspense fallback={<div>Loading...</div>}>
               <Footer />
             </Suspense>

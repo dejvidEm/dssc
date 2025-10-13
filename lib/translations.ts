@@ -43,6 +43,14 @@ export interface Translations {
       advantage3: string
     }
   }
+  stats: {
+    label: string
+    title: string
+    description: string
+    countries: string
+    experience: string
+    team: string
+  }
   testimonials: {
     title: string
     subtitle: string
@@ -306,6 +314,14 @@ export const translations: Record<Language, Translations> = {
         advantage2: "Mesačné nájomné zmluvy",
         advantage3: "Online správa účtu a platby",
       },
+    },
+    stats: {
+      label: "Služby",
+      title: "Prečo dôverovať DSSCompany?",
+      description: "S globálnou prítomnosťou a rokmi skúseností poskytujeme profesionálne skladovacie riešenia, na ktoré sa môžete spoľahnúť.",
+      countries: "Krajín po celom svete",
+      experience: "Rokov skúseností",
+      team: "Ľudí k vašim službám",
     },
     testimonials: {
       title: "Čo hovoria naši klienti",
@@ -573,6 +589,14 @@ export const translations: Record<Language, Translations> = {
         advantage3: "Online account management and payments",
       },
     },
+    stats: {
+      label: "Services",
+      title: "Why Trust DSSCompany?",
+      description: "With a global presence and years of expertise, we deliver professional storage solutions you can rely on.",
+      countries: "Countries Worldwide",
+      experience: "Years of Experience",
+      team: "People at Your Service",
+    },
     testimonials: {
       title: "What Our Clients Say",
       subtitle: "Read about the experiences of our satisfied clients",
@@ -838,6 +862,14 @@ export const translations: Record<Language, Translations> = {
         advantage2: "Monat-zu-Monat Mietverträge",
         advantage3: "Online-Kontoverwaltung und Zahlungen",
       },
+    },
+    stats: {
+      label: "Dienstleistungen",
+      title: "Warum DSSCompany vertrauen?",
+      description: "Mit einer globalen Präsenz und jahrelanger Expertise liefern wir professionelle Lagerlösungen, auf die Sie sich verlassen können.",
+      countries: "Länder weltweit",
+      experience: "Jahre Erfahrung",
+      team: "Menschen zu Ihren Diensten",
     },
     testimonials: {
       title: "Was unsere Kunden sagen",
