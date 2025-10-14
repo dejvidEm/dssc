@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from '@/hooks/use-language'
 
 interface FooterItemProps {
@@ -152,8 +153,15 @@ const FooterBlock = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
             <div className="border-t border-t-gray-200 dark:border-t-gray-800 py-16 md:py-20 flex flex-col lg:flex-row gap-14 gap-y-16">
                 <div className="w-full lg:w-96 space-y-6">
-                    <Link href="#" className="text-primary font-bold text-2xl">
-                        {t.footer.companyName}
+                    <Link href="#" className="flex items-center space-x-2 text-primary font-bold text-2xl">
+                        <Image 
+                            src="/dssc.png" 
+                            alt="DSSCompany Logo" 
+                            width={32} 
+                            height={32}
+                            className="h-8 w-8 object-contain"
+                        />
+                        <span>{t.footer.companyName}</span>
                     </Link>
                     <p className="max-w-lg">
                         {t.footer.description}

@@ -269,6 +269,12 @@ export interface Translations {
     copyright: string
     rights: string
   }
+  videoBanner: {
+    subtitle: string
+    title: string
+    description: string
+    buttonText: string
+  }
 }
 
 export const translations: Record<Language, Translations> = {
@@ -545,6 +551,12 @@ export const translations: Record<Language, Translations> = {
       copyright: "© 2024 DSSCompany.",
       rights: "Všetky práva vyhradené.",
     },
+    videoBanner: {
+      subtitle: "Zažite našu inováciu",
+      title: "Pozrite si našu prácu v akcii",
+      description: "Sledujte, ako transformujeme nápady na realitu s najmodernejšou technológiou a expertnými riešeniami.",
+      buttonText: "Dozvedieť sa viac",
+    },
   },
   en: {
     nav: {
@@ -818,6 +830,12 @@ export const translations: Record<Language, Translations> = {
       },
       copyright: "© 2024 DSSCompany.",
       rights: "All rights reserved.",
+    },
+    videoBanner: {
+      subtitle: "Experience Our Innovation",
+      title: "See Our Work in Action",
+      description: "Watch how we transform ideas into reality with cutting-edge technology and expert solutions.",
+      buttonText: "Learn More",
     },
   },
   de: {
@@ -1093,6 +1111,12 @@ export const translations: Record<Language, Translations> = {
       },
       copyright: "© 2024 DSSCompany.",
       rights: "Alle Rechte vorbehalten.",
+    },
+    videoBanner: {
+      subtitle: "Erleben Sie unsere Innovation",
+      title: "Sehen Sie unsere Arbeit in Aktion",
+      description: "Sehen Sie, wie wir Ideen mit modernster Technologie und Expertenlösungen in die Realität umsetzen.",
+      buttonText: "Mehr erfahren",
     },
   },
 }

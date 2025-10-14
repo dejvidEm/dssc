@@ -15,66 +15,52 @@ export default function GalleryPage() {
   const galleryImages = [
     {
       id: 1,
-      src: "/placeholder.jpg",
-      alt: "Storage facility exterior",
-      title: "Modern Facilities",
+      src: "/gallery/facility-exterior-1.jpg",
+      alt: "Storage facility exterior view",
+      title: "Modern Facility Exterior",
       category: "Facilities",
     },
     {
       id: 2,
-      src: "/placeholder.jpg",
-      alt: "Climate controlled units",
+      src: "/gallery/storage-units-1.jpg",
+      alt: "Climate controlled storage units",
       title: "Climate Controlled Units",
       category: "Interior",
     },
     {
       id: 3,
-      src: "/placeholder.jpg",
-      alt: "Security systems",
-      title: "Advanced Security",
-      category: "Security",
+      src: "/gallery/facility-interior-1.jpg",
+      alt: "Clean facility interior",
+      title: "Clean Interior Spaces",
+      category: "Interior",
     },
     {
       id: 4,
-      src: "/placeholder.jpg",
+      src: "/gallery/storage-units-2.jpg",
       alt: "Storage units hallway",
-      title: "Clean Hallways",
+      title: "Wide Hallways",
       category: "Interior",
     },
     {
       id: 5,
-      src: "/placeholder.jpg",
-      alt: "Loading area",
-      title: "Easy Access",
+      src: "/gallery/facility-exterior-2.jpg",
+      alt: "Facility exterior view",
+      title: "Professional Exterior",
       category: "Facilities",
     },
     {
       id: 6,
-      src: "/placeholder.jpg",
+      src: "/gallery/storage-units-3.jpg",
       alt: "Various unit sizes",
-      title: "Multiple Sizes",
+      title: "Multiple Unit Sizes",
       category: "Interior",
     },
     {
       id: 7,
-      src: "/placeholder.jpg",
-      alt: "Office area",
-      title: "Customer Service",
-      category: "Facilities",
-    },
-    {
-      id: 8,
-      src: "/placeholder.jpg",
-      alt: "Parking area",
-      title: "Ample Parking",
-      category: "Facilities",
-    },
-    {
-      id: 9,
-      src: "/placeholder.jpg",
-      alt: "Security gate",
-      title: "Secure Entry",
-      category: "Security",
+      src: "/gallery/facility-interior-2.jpg",
+      alt: "Facility interior design",
+      title: "Modern Interior Design",
+      category: "Interior",
     },
   ]
 
@@ -167,7 +153,7 @@ export default function GalleryPage() {
 
       {/* Image Modal */}
       <Dialog open={selectedImage !== null} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-7xl p-0 overflow-hidden">
+        <DialogContent className="max-w-7xl p-0 overflow-hidden" showCloseButton={false}>
           {selectedImage !== null && (
             <div className="relative">
               <button

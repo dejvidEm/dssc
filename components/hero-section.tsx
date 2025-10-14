@@ -152,7 +152,7 @@ export default function HeroSection() {
         >
           <div className="relative w-full h-[400px] lg:h-[500px]">
             <Image 
-              src="/placeholder.jpg" 
+              src="/hero.jpg" 
               alt="happy team" 
               fill
               className="object-cover rounded-lg" 

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { MobileMenu } from "@/components/mobile-menu"
 import { LanguageSelector } from "@/components/language-selector"
@@ -41,6 +42,13 @@ export function Navbar() {
     >
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
+          <Image 
+            src="/dssc.png" 
+            alt="DSSCompany Logo" 
+            width={40} 
+            height={40}
+            className="h-8 w-8 object-contain"
+          />
           <div className="text-xl font-bold text-primary">DSSCompany</div>
         </Link>
 

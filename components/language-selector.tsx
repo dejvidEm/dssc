@@ -14,6 +14,7 @@ const languages = [
 
 export function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const { language, setLanguage } = useLanguage()
   const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -23,6 +24,18 @@ export function LanguageSelector() {
     setLanguage(lang.code)
     setIsOpen(false)
   }
+
+  // Check if we're on mobile and update on resize
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile() // Check on mount
+    window.addEventListener('resize', checkMobile)
+    
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -53,7 +66,11 @@ export function LanguageSelector() {
       </Button>
 
       {isOpen && (
-        <div className="absolute right-0 top-full mt-1 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+        <div className={`absolute right-0 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50 ${
+          isMobile 
+            ? 'bottom-full mb-1' 
+            : 'top-full mt-1'
+        }`}>
           {languages.map((lang) => (
             <button
               key={lang.code}

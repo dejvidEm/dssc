@@ -1,4 +1,7 @@
+"use client"
+
 import HeroSection from "@/components/hero-section"
+import { VideoBanner } from "@/components/video-banner"
 import { FeaturesSection } from "@/components/features-section"
 import { StatsSection } from "@/components/stats-section"
 import { EuropeanPresence } from "@/components/european-presence"
@@ -11,6 +14,14 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <VideoBanner
+        videoSrc="/video/main.mp4"
+        onButtonClick={() => window.location.href = '/about'}
+        showControls={false}
+        autoPlay={true}
+        muted={true}
+        loop={true}
+      />
       <FeaturesSection />
       <StatsSection />
       <ScrollReveal delay={0.1}>

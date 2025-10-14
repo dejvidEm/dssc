@@ -43,7 +43,8 @@ export default function AboutPage() {
       <section className="py-24">
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
-            <div className="space-y-6">
+            {/* Text content - order-2 on mobile, order-1 on desktop */}
+            <div className="space-y-6 order-2 lg:order-1">
               <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">Our Story</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
@@ -61,7 +62,8 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="relative">
+            {/* Visual element - order-1 on mobile, order-2 on desktop */}
+            <div className="relative order-1 lg:order-2">
               <div className="aspect-square rounded-2xl bg-primary/10 p-8 flex items-center justify-center border-2 border-primary/20">
                 <div className="text-center space-y-4">
                   <div className="text-6xl font-bold text-primary">10+</div>

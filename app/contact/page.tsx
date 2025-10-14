@@ -81,15 +81,17 @@ export default function ContactPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="aspect-video rounded-lg bg-primary/10 flex items-center justify-center border-2 border-primary/20">
-                    <div className="text-center space-y-2">
-                      <MapPin className="h-12 w-12 text-primary mx-auto" />
-                      <p className="text-lg font-semibold">
-                        {/* Replaced hardcoded text with translation */}
-                        {t.contact.map.interactiveMap}
-                      </p>
-                      <p className="text-sm text-muted-foreground">Bratislava, Slovakia</p>
-                    </div>
+                  <div className="aspect-video rounded-lg overflow-hidden border-2 border-primary/20">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.938326073049!2d17.107748315648!3d48.14388897922371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c895f0b0b0b0b%3A0x0!2sBratislava%20City%20Center!5e0!3m2!1sen!2ssk!4v1634567890123"
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Bratislava City Center Map"
+                    />
                   </div>
                 </CardContent>
               </Card>

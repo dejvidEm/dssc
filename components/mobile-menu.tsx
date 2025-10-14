@@ -2,10 +2,11 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, X } from "lucide-react"
+import { Menu } from "lucide-react"
 import { LanguageSelector } from "@/components/language-selector"
 import { useLanguage } from "@/hooks/use-language"
 import { cn } from "@/lib/utils"
@@ -33,11 +34,17 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="top" className="w-full h-screen">
         <div className="flex flex-col h-full">
-          <div className="flex items-center justify-between py-4">
-            <div className="text-xl font-bold text-primary">DSSCompany</div>
-            <Button variant="ghost" size="sm" onClick={() => setOpen(false)}>
-              <X className="h-5 w-5" />
-            </Button>
+          <div className="flex items-center justify-center py-4">
+            <div className="flex items-center space-x-2">
+              <Image 
+                src="/dssc.png" 
+                alt="DSSCompany Logo" 
+                width={32} 
+                height={32}
+                className="h-8 w-8 object-contain"
+              />
+              <div className="text-xl font-bold text-primary">DSSCompany</div>
+            </div>
           </div>
 
           <nav className="flex-1 flex flex-col justify-center space-y-8">
