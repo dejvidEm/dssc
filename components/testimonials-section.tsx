@@ -45,6 +45,26 @@ export function TestimonialsSection() {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
+          {/* Navigation buttons - positioned above and on the right */}
+          <div className="flex justify-center lg:justify-end mb-6 gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              className="bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground cursor-pointer"
+              onClick={goToPrevious}
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="icon"
+              className="bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground cursor-pointer"
+              onClick={goToNext}
+            >
+              <ChevronRight className="w-4 h-4" />
+            </Button>
+          </div>
+
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -79,24 +99,6 @@ export function TestimonialsSection() {
               ))}
             </div>
           </div>
-
-          {/* Navigation buttons */}
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground"
-            onClick={goToPrevious}
-          >
-            <ChevronLeft className="w-4 h-4" />
-          </Button>
-          <Button
-            variant="outline"
-            size="icon"
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-background/80 backdrop-blur-sm border-primary/20 hover:bg-primary hover:text-primary-foreground"
-            onClick={goToNext}
-          >
-            <ChevronRight className="w-4 h-4" />
-          </Button>
 
           {/* Dots indicator */}
           <div className="flex justify-center mt-8 space-x-2">

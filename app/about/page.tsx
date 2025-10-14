@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
 import { Target, Eye, Heart, Award } from "lucide-react"
+import Image from "next/image"
 
 export default function AboutPage() {
   const { t } = useLanguage()
@@ -23,14 +24,13 @@ export default function AboutPage() {
     },
     {
       icon: Heart,
-      title: "Values",
-      description: "Integrity, innovation, and customer satisfaction are at the core of everything we do.",
+      title: t.about.values.values,
+      description: t.about.values.valuesDescription,
     },
     {
       icon: Award,
-      title: "Excellence",
-      description:
-        "We strive for excellence in every project, ensuring the highest quality standards and professional service.",
+      title: t.about.values.excellence,
+      description: t.about.values.excellenceDescription,
     },
   ]
 
@@ -45,31 +45,26 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
             {/* Text content - order-2 on mobile, order-1 on desktop */}
             <div className="space-y-6 order-2 lg:order-1">
-              <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">Our Story</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">{t.about.story.title}</h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  Founded with a vision to transform businesses through innovative solutions, we have grown from a small
-                  team of passionate professionals to a trusted partner for companies worldwide.
-                </p>
-                <p>
-                  Our journey began with a simple belief: that every business deserves access to world-class expertise
-                  and cutting-edge solutions. Today, we continue to uphold this principle while expanding our
-                  capabilities and reach.
-                </p>
-                <p>
-                  With years of experience across various industries, we bring deep knowledge and fresh perspectives to
-                  every project, ensuring our clients stay ahead in an ever-evolving marketplace.
-                </p>
+                <p>{t.about.story.paragraph1}</p>
+                <p>{t.about.story.paragraph2}</p>
+                <p>{t.about.story.paragraph3}</p>
               </div>
             </div>
             {/* Visual element - order-1 on mobile, order-2 on desktop */}
             <div className="relative order-1 lg:order-2">
-              <div className="aspect-square rounded-2xl bg-primary/10 p-8 flex items-center justify-center border-2 border-primary/20">
-                <div className="text-center space-y-4">
-                  <div className="text-6xl font-bold text-primary">10+</div>
-                  <div className="text-lg font-semibold">Years of Excellence</div>
-                  <div className="text-sm text-muted-foreground">Serving clients worldwide</div>
-                </div>
+              <div className="aspect-square rounded-2xl overflow-hidden border-2 border-primary/20">
+                <video 
+                  src="/video/main.mp4" 
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
           </div>
@@ -81,10 +76,10 @@ export default function AboutPage() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl mb-4">
-              Our Values & Mission
+              {t.about.values.title}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
-              The principles that guide our work and define our commitment to excellence.
+              {t.about.values.subtitle}
             </p>
           </div>
 
@@ -114,10 +109,10 @@ export default function AboutPage() {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl mb-4">
-              Meet Our Team
+              {t.about.team.title}
             </h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
-              Passionate professionals dedicated to delivering exceptional results.
+              {t.about.team.subtitle}
             </p>
           </div>
 
@@ -131,19 +126,19 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <CardTitle className="text-xl">
-                    {member === 1 ? "John Smith" : member === 2 ? "Anna Miller" : "Peter Klein"}
+                    {member === 1 ? t.about.team.member1.name : member === 2 ? t.about.team.member2.name : t.about.team.member3.name}
                   </CardTitle>
                   <CardDescription className="text-primary font-medium">
-                    {member === 1 ? "CEO & Founder" : member === 2 ? "Lead Developer" : "Project Manager"}
+                    {member === 1 ? t.about.team.member1.role : member === 2 ? t.about.team.member2.role : t.about.team.member3.role}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground leading-relaxed">
                     {member === 1
-                      ? "Visionary leader with 15+ years of industry experience."
+                      ? t.about.team.member1.description
                       : member === 2
-                        ? "Expert developer passionate about creating innovative solutions."
-                        : "Experienced manager ensuring project success and client satisfaction."}
+                        ? t.about.team.member2.description
+                        : t.about.team.member3.description}
                   </p>
                 </CardContent>
               </Card>

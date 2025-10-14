@@ -6,7 +6,7 @@ import { ChevronDown } from 'lucide-react'
 import { useLanguage } from '@/hooks/use-language'
  
 export default function HeroSection() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
   
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,7 +69,7 @@ export default function HeroSection() {
     <section className="relative pt-10 xl:pt-14 pb-16 overflow-hidden">
         <div className="mx-auto lg:max-w-7xl w-full px-5 sm:px-10 md:px-12 lg:px-5 flex flex-col lg:flex-row gap-8 lg:gap-10 xl:gap-12">
           <motion.div 
-            className="mx-auto text-center lg:text-left flex flex-col max-w-3xl justify-center lg:justify-start lg:py-8 flex-1 lg:w-1/2 lg:max-w-none"
+            className="mx-auto text-center lg:text-left flex flex-col max-w-3xl justify-center lg:justify-start lg:py-8 flex-1 lg:w-1/2 lg:max-w-none order-1 lg:order-1"
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -78,7 +78,7 @@ export default function HeroSection() {
               className="text-foreground text-4xl/snug sm:text-6xl/tight lg:text-5xl/tight xl:text-6xl/tight font-semibold text"
               variants={itemVariants}
             >
-              {t.hero.title} <span className="bg-primary/10 inline-block border border-primary/30 px-3 text-primary">{t.hero.subtitle}</span> Solutions
+              {t.hero.title} <span className="bg-primary/10 inline-block border border-primary/30 px-3 text-primary">{t.hero.subtitle}</span>{language === 'sk' ? '' : ' Solutions'}
             </motion.h1>
             <motion.p 
               className="mt-10 text-muted-foreground lg:text-lg max-w-2xl lg:max-w-none mx-auto"
@@ -145,12 +145,12 @@ export default function HeroSection() {
             </motion.div>
           </motion.div>
         <motion.div 
-          className="flex flex-1 lg:w-1/2 relative max-w-3xl mx-auto lg:max-w-none pb-16 lg:pb-20"
-          variants={imageVariants}
-          initial="hidden"
-          animate="visible"
+          className="w-full lg:w-1/2 relative max-w-3xl mx-auto lg:max-w-none pb-8 lg:pb-20 order-2 lg:order-2"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <div className="relative w-full h-[400px] lg:h-[500px]">
+          <div className="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-200">
             <Image 
               src="/hero.jpg" 
               alt="happy team" 
@@ -159,7 +159,7 @@ export default function HeroSection() {
             />
           </div>
           <motion.div 
-            className="absolute left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 bottom-16 w-60 p-4 rounded-lg bg-card border border-border shadow-lg"
+            className="absolute left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 bottom-16 w-60 p-4 rounded-lg bg-card border border-border shadow-lg hidden lg:block"
             variants={statsVariants}
             initial="hidden"
             animate="visible"

@@ -6,14 +6,28 @@ const CtaSection = () => {
   const { t } = useLanguage()
   
   return (
-    <section className="py-20 bg-primary">
-      <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
+    <section className="relative py-20 overflow-hidden">
+      {/* Background Video */}
+      <video 
+        src="/video/main.mp4" 
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/80"></div>
+      
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
         <div className="text-center space-y-8">
           <div className="space-y-4">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
               {t.cta.title}
             </h2>
-            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               {t.cta.subtitle}
             </p>
           </div>
@@ -33,7 +47,7 @@ const CtaSection = () => {
             </Link>
           </div>
           
-          <div className="flex items-center justify-center space-x-8 text-primary-foreground/90">
+          <div className="flex items-center justify-center space-x-8 text-white/90">
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />

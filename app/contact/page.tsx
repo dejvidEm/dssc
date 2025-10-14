@@ -1,13 +1,34 @@
 "use client"
 
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { ContactForm } from "@/components/contact-form"
 import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
-import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import { Mail, Phone, MapPin, Clock, ChevronDown, ChevronUp } from "lucide-react"
 
 export default function ContactPage() {
   const { t } = useLanguage()
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index)
+  }
+
+  const faqItems = [
+    {
+      question: t.contact.faq.question1.question,
+      answer: t.contact.faq.question1.answer
+    },
+    {
+      question: t.contact.faq.question2.question,
+      answer: t.contact.faq.question2.answer
+    },
+    {
+      question: t.contact.faq.question3.question,
+      answer: t.contact.faq.question3.answer
+    }
+  ]
 
   const contactInfo = [
     {
@@ -95,39 +116,45 @@ export default function ContactPage() {
                   </div>
                 </CardContent>
               </Card>
+            </div>
+          </div>
 
-              {/* FAQ */}
-              <Card className="border-0 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl">
-                    {/* Replaced hardcoded title with translation */}
-                    {t.contact.faq.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold mb-2">
-                      {/* Replaced hardcoded question with translation */}
-                      {t.contact.faq.question1.question}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">{t.contact.faq.question1.answer}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">
-                      {/* Replaced hardcoded question with translation */}
-                      {t.contact.faq.question2.question}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">{t.contact.faq.question2.answer}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-2">
-                      {/* Replaced hardcoded question with translation */}
-                      {t.contact.faq.question3.question}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">{t.contact.faq.question3.answer}</p>
-                  </div>
-                </CardContent>
-              </Card>
+          {/* FAQ Section - 60% Width */}
+          <div className="mt-16">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl mb-4">
+                {t.contact.faq.title}
+              </h2>
+            </div>
+            <div className="flex justify-center">
+              <div className="w-full max-w-[60%] space-y-4">
+              {faqItems.map((item, index) => (
+                <Card key={index} className="border-0 shadow-lg">
+                  <CardContent className="p-0">
+                    <button
+                      onClick={() => toggleFAQ(index)}
+                      className="w-full p-3 text-left flex items-center justify-between cursor-pointer"
+                    >
+                      <h3 className="text-lg font-semibold px-6">{item.question}</h3>
+                      {openFAQ === index ? (
+                        <ChevronUp className="h-5 w-5 text-primary flex-shrink-0" />
+                      ) : (
+                        <ChevronDown className="h-5 w-5 text-primary flex-shrink-0" />
+                      )}
+                    </button>
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                        openFAQ === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div className="px-9 pb-3">
+                        <p className="text-muted-foreground leading-relaxed">{item.answer}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+              </div>
             </div>
           </div>
         </div>

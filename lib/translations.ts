@@ -84,6 +84,39 @@ export interface Translations {
     description: string
     mission: string
     vision: string
+    story: {
+      title: string
+      paragraph1: string
+      paragraph2: string
+      paragraph3: string
+    }
+    values: {
+      title: string
+      subtitle: string
+      values: string
+      valuesDescription: string
+      excellence: string
+      excellenceDescription: string
+    }
+    team: {
+      title: string
+      subtitle: string
+      member1: {
+        name: string
+        role: string
+        description: string
+      }
+      member2: {
+        name: string
+        role: string
+        description: string
+      }
+      member3: {
+        name: string
+        role: string
+        description: string
+      }
+    }
   }
   services: {
     title: string
@@ -366,6 +399,39 @@ export const translations: Record<Language, Translations> = {
       description: "Sme tím odborníkov s dlhoročnými skúsenosťami v našom odbore.",
       mission: "Naša misia je poskytovať kvalitné služby našim klientom.",
       vision: "Naša vízia je byť lídrom v našom odbore.",
+      story: {
+        title: "Náš príbeh",
+        paragraph1: "Založené s víziou transformovať podnikanie prostredníctvom inovatívnych riešení, vyrastli sme z malého tímu vášnivých profesionálov na dôveryhodného partnera pre spoločnosti po celom svete.",
+        paragraph2: "Naša cesta začala jednoduchým presvedčením: že každé podnikanie si zaslúži prístup k svetovej triede odbornosti a najmodernejším riešeniam. Dnes pokračujeme v dodržiavaní tohto princípu pri rozširovaní našich schopností a dosahu.",
+        paragraph3: "S rokmi skúseností naprieč rôznymi odvetviami prinášame hlboké znalosti a nové pohľady na každý projekt, čím zabezpečujeme, že naši klienti zostávajú na čele neustále sa vyvíjajúceho trhu.",
+      },
+      values: {
+        title: "Naše hodnoty a misia",
+        subtitle: "Princípy, ktoré riadia našu prácu a definujú naše záväzky k dokonalosti.",
+        values: "Hodnoty",
+        valuesDescription: "Integrita, inovácia a spokojnosť zákazníkov sú jadrom všetkého, čo robíme.",
+        excellence: "Dokonalosť",
+        excellenceDescription: "Usilujeme sa o dokonalosť v každom projekte, zabezpečujúc najvyššie štandardy kvality a profesionálne služby.",
+      },
+      team: {
+        title: "Spoznajte náš tím",
+        subtitle: "Vášniví profesionáli oddaní poskytovaniu výnimočných výsledkov.",
+        member1: {
+          name: "Ján Novák",
+          role: "Generálny riaditeľ a zakladateľ",
+          description: "Víziový lídor s 15+ rokmi skúseností v odvetví.",
+        },
+        member2: {
+          name: "Anna Malá",
+          role: "Hlavná vývojárka",
+          description: "Expertná vývojárka vášnivá za vytváranie inovatívnych riešení.",
+        },
+        member3: {
+          name: "Peter Kováč",
+          role: "Projektový manažér",
+          description: "Skúsený manažér zabezpečujúci úspech projektu a spokojnosť klienta.",
+        },
+      },
     },
     services: {
       title: "Naše služby",
@@ -646,6 +712,39 @@ export const translations: Record<Language, Translations> = {
       description: "We are a team of experts with years of experience in our field.",
       mission: "Our mission is to provide quality services to our clients.",
       vision: "Our vision is to be a leader in our industry.",
+      story: {
+        title: "Our Story",
+        paragraph1: "Founded with a vision to transform businesses through innovative solutions, we have grown from a small team of passionate professionals to a trusted partner for companies worldwide.",
+        paragraph2: "Our journey began with a simple belief: that every business deserves access to world-class expertise and cutting-edge solutions. Today, we continue to uphold this principle while expanding our capabilities and reach.",
+        paragraph3: "With years of experience across various industries, we bring deep knowledge and fresh perspectives to every project, ensuring our clients stay ahead in an ever-evolving marketplace.",
+      },
+      values: {
+        title: "Our Values & Mission",
+        subtitle: "The principles that guide our work and define our commitment to excellence.",
+        values: "Values",
+        valuesDescription: "Integrity, innovation, and customer satisfaction are at the core of everything we do.",
+        excellence: "Excellence",
+        excellenceDescription: "We strive for excellence in every project, ensuring the highest quality standards and professional service.",
+      },
+      team: {
+        title: "Meet Our Team",
+        subtitle: "Passionate professionals dedicated to delivering exceptional results.",
+        member1: {
+          name: "John Smith",
+          role: "CEO & Founder",
+          description: "Visionary leader with 15+ years of industry experience.",
+        },
+        member2: {
+          name: "Anna Miller",
+          role: "Lead Developer",
+          description: "Expert developer passionate about creating innovative solutions.",
+        },
+        member3: {
+          name: "Peter Klein",
+          role: "Project Manager",
+          description: "Experienced manager ensuring project success and client satisfaction.",
+        },
+      },
     },
     services: {
       title: "Our Services",
@@ -926,6 +1025,39 @@ export const translations: Record<Language, Translations> = {
       description: "Wir sind ein Team von Experten mit jahrelanger Erfahrung in unserem Bereich.",
       mission: "Unsere Mission ist es, qualitativ hochwertige Dienstleistungen für unsere Kunden zu erbringen.",
       vision: "Unsere Vision ist es, ein Marktführer in unserer Branche zu sein.",
+      story: {
+        title: "Unsere Geschichte",
+        paragraph1: "Gegründet mit der Vision, Unternehmen durch innovative Lösungen zu transformieren, sind wir von einem kleinen Team leidenschaftlicher Fachkräfte zu einem vertrauenswürdigen Partner für Unternehmen weltweit gewachsen.",
+        paragraph2: "Unsere Reise begann mit einem einfachen Glauben: dass jedes Unternehmen Zugang zu Weltklasse-Expertise und modernsten Lösungen verdient. Heute halten wir weiterhin an diesem Prinzip fest und erweitern gleichzeitig unsere Fähigkeiten und Reichweite.",
+        paragraph3: "Mit jahrelanger Erfahrung in verschiedenen Branchen bringen wir tiefes Wissen und frische Perspektiven in jedes Projekt ein und stellen sicher, dass unsere Kunden in einem sich ständig entwickelnden Markt vorne bleiben.",
+      },
+      values: {
+        title: "Unsere Werte & Mission",
+        subtitle: "Die Prinzipien, die unsere Arbeit leiten und unser Engagement für Exzellenz definieren.",
+        values: "Werte",
+        valuesDescription: "Integrität, Innovation und Kundenzufriedenheit stehen im Mittelpunkt alles dessen, was wir tun.",
+        excellence: "Exzellenz",
+        excellenceDescription: "Wir streben nach Exzellenz in jedem Projekt und stellen höchste Qualitätsstandards und professionellen Service sicher.",
+      },
+      team: {
+        title: "Lernen Sie unser Team kennen",
+        subtitle: "Leidenschaftliche Fachkräfte, die sich der Lieferung außergewöhnlicher Ergebnisse verschrieben haben.",
+        member1: {
+          name: "Johann Schmidt",
+          role: "Geschäftsführer & Gründer",
+          description: "Visionärer Führer mit 15+ Jahren Branchenerfahrung.",
+        },
+        member2: {
+          name: "Anna Müller",
+          role: "Hauptentwicklerin",
+          description: "Expertin-Entwicklerin, die leidenschaftlich innovative Lösungen schafft.",
+        },
+        member3: {
+          name: "Peter Klein",
+          role: "Projektmanager",
+          description: "Erfahrener Manager, der Projekterfolg und Kundenzufriedenheit sicherstellt.",
+        },
+      },
     },
     services: {
       title: "Unsere Dienstleistungen",

@@ -92,7 +92,7 @@ export function VideoBanner({
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-white text-black hover:bg-gray-100 px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
                 onClick={handleButtonClick}
               >
                 {t.videoBanner.buttonText}
@@ -110,7 +110,7 @@ export function VideoBanner({
               variant="ghost"
               size="sm"
               onClick={togglePlay}
-              className="text-white hover:bg-white/20"
+              className="text-white hover:bg-white/20 cursor-pointer"
             >
               {isPlaying ? (
                 <Pause className="h-5 w-5" />
@@ -123,7 +123,7 @@ export function VideoBanner({
               variant="ghost"
               size="sm"
               onClick={toggleMute}
-              className="text-white hover:bg-white/20"
+              className="text-white hover:bg-white/20 cursor-pointer"
             >
               {isMuted ? (
                 <VolumeX className="h-5 w-5" />
