@@ -83,7 +83,9 @@ export interface Translations {
     title: string
     description: string
     mission: string
+    missionDescription: string
     vision: string
+    visionDescription: string
     story: {
       title: string
       paragraph1: string
@@ -325,7 +327,7 @@ export const translations: Record<Language, Translations> = {
       description: "Skladujte svoje veci bezpečne v našich moderných zariadeniach. Klimatizované jednotky, 24/7 bezpečnosť a flexibilné možnosti prenájmu pre všetky vaše skladovacie potreby.",
       cta1: "Rezervovať jednotku",
       cta2: "Zobraziť ceny",
-      employees: "45+ zamestnancov",
+      employees: "45+ realizovaných projektov",
       reviews: "5.0 (2.5k recenzií)",
     },
     features: {
@@ -397,8 +399,10 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: "O nás",
       description: "Sme tím odborníkov s dlhoročnými skúsenosťami v našom odbore.",
-      mission: "Naša misia je poskytovať kvalitné služby našim klientom.",
-      vision: "Naša vízia je byť lídrom v našom odbore.",
+      mission: "Misia",
+      missionDescription: "Sústreďujeme sa na poskytovanie výnimočných výsledkov, ktoré prekračujú očakávania a vytvárajú zmysluplný dopad pre našich klientov.",
+      vision: "Vízia",
+      visionDescription: "Predstavujeme si budúcnosť, kde sa inovácie a dokonalosť spájajú, aby vytvorili trvalú hodnotu pre podniky po celom svete.",
       story: {
         title: "Náš príbeh",
         paragraph1: "Založené s víziou transformovať podnikanie prostredníctvom inovatívnych riešení, vyrastli sme z malého tímu vášnivých profesionálov na dôveryhodného partnera pre spoločnosti po celom svete.",
@@ -638,7 +642,7 @@ export const translations: Record<Language, Translations> = {
       description: "Store your belongings safely with our state-of-the-art facilities. Climate-controlled units, 24/7 security, and flexible rental options to meet all your storage needs.",
       cta1: "Reserve Unit",
       cta2: "View Pricing",
-      employees: "45+ employees",
+      employees: "45+ projects realized",
       reviews: "5.0 (2.5k reviews)",
     },
     features: {
@@ -710,8 +714,10 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: "About Us",
       description: "We are a team of experts with years of experience in our field.",
-      mission: "Our mission is to provide quality services to our clients.",
-      vision: "Our vision is to be a leader in our industry.",
+      mission: "Mission",
+      missionDescription: "We focus on delivering exceptional results that exceed expectations and drive meaningful impact for our clients.",
+      vision: "Vision",
+      visionDescription: "We envision a future where innovation and excellence come together to create lasting value for businesses worldwide.",
       story: {
         title: "Our Story",
         paragraph1: "Founded with a vision to transform businesses through innovative solutions, we have grown from a small team of passionate professionals to a trusted partner for companies worldwide.",
@@ -951,7 +957,7 @@ export const translations: Record<Language, Translations> = {
       description: "Lagern Sie Ihre Sachen sicher in unseren modernen Einrichtungen. Klimatisierte Einheiten, 24/7 Sicherheit und flexible Mietoptionen für alle Ihre Lagerbedürfnisse.",
       cta1: "Einheit reservieren",
       cta2: "Preise anzeigen",
-      employees: "45+ Mitarbeiter",
+      employees: "45+ realisierte Projekte",
       reviews: "5.0 (2.5k Bewertungen)",
     },
     features: {
@@ -1023,8 +1029,10 @@ export const translations: Record<Language, Translations> = {
     about: {
       title: "Über uns",
       description: "Wir sind ein Team von Experten mit jahrelanger Erfahrung in unserem Bereich.",
-      mission: "Unsere Mission ist es, qualitativ hochwertige Dienstleistungen für unsere Kunden zu erbringen.",
-      vision: "Unsere Vision ist es, ein Marktführer in unserer Branche zu sein.",
+      mission: "Mission",
+      missionDescription: "Wir konzentrieren uns darauf, außergewöhnliche Ergebnisse zu liefern, die Erwartungen übertreffen und bedeutungsvollen Einfluss für unsere Kunden schaffen.",
+      vision: "Vision",
+      visionDescription: "Wir stellen uns eine Zukunft vor, in der Innovation und Exzellenz zusammenkommen, um dauerhaften Wert für Unternehmen weltweit zu schaffen.",
       story: {
         title: "Unsere Geschichte",
         paragraph1: "Gegründet mit der Vision, Unternehmen durch innovative Lösungen zu transformieren, sind wir von einem kleinen Team leidenschaftlicher Fachkräfte zu einem vertrauenswürdigen Partner für Unternehmen weltweit gewachsen.",

@@ -41,15 +41,14 @@ export function Navbar() {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center">
           <Image 
             src="/dssc.png" 
             alt="DSSCompany Logo" 
-            width={40} 
-            height={40}
-            className="h-8 w-8 object-contain"
+            width={60} 
+            height={60}
+            className="h-12 w-auto object-contain"
           />
-          <div className="text-xl font-bold text-primary">DSSCompany</div>
         </Link>
 
         {/* Desktop Navigation */}

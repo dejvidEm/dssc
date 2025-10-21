@@ -13,14 +13,12 @@ export default function AboutPage() {
     {
       icon: Target,
       title: t.about.mission,
-      description:
-        "We focus on delivering exceptional results that exceed expectations and drive meaningful impact for our clients.",
+      description: t.about.missionDescription,
     },
     {
       icon: Eye,
       title: t.about.vision,
-      description:
-        "We envision a future where innovation and excellence come together to create lasting value for businesses worldwide.",
+      description: t.about.visionDescription,
     },
     {
       icon: Heart,
