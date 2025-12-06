@@ -4,6 +4,7 @@ import HeroSection from "@/components/hero-section"
 import { VideoBanner } from "@/components/video-banner"
 import { FeaturesSection } from "@/components/features-section"
 import { StatsSection } from "@/components/stats-section"
+import { ExpertiseSection } from "@/components/expertise-section"
 import { EuropeanPresence } from "@/components/european-presence"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { CtaSection } from "@/components/cta-section"
@@ -25,6 +26,9 @@ export default function HomePage() {
       <FeaturesSection />
       <StatsSection />
       <ScrollReveal delay={0.1}>
+        <ExpertiseSection />
+      </ScrollReveal>
+      <ScrollReveal delay={0.2}>
         <TestimonialsSection />
       </ScrollReveal>
       <ScrollReveal delay={0.2}>

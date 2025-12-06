@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ContactForm } from "@/components/contact-form"
+import { FlippingContactForm } from "@/components/flipping-contact-form"
 import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
-import { Mail, Phone, MapPin, Clock, ChevronDown, ChevronUp } from "lucide-react"
+import { Mail, Phone, ChevronDown, ChevronUp } from "lucide-react"
 
 export default function ContactPage() {
   const { t } = useLanguage()
@@ -30,95 +30,21 @@ export default function ContactPage() {
     }
   ]
 
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: t.contact.info.email.title,
-      details: "info@company.com",
-      description: t.contact.info.email.description,
-    },
-    {
-      icon: Phone,
-      title: t.contact.info.phone.title,
-      details: "+421 123 456 789",
-      description: t.contact.info.phone.description,
-    },
-    {
-      icon: MapPin,
-      title: t.contact.info.office.title,
-      details: "Bratislava, Slovakia",
-      description: t.contact.info.office.description,
-    },
-    {
-      icon: Clock,
-      title: t.contact.info.responseTime.title,
-      details: t.contact.info.responseTime.details,
-      description: t.contact.info.responseTime.description,
-    },
-  ]
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <PageHero title={t.contact.title} description={t.contact.description} />
 
-      {/* Contact Information */}
-      <section className="py-24">
+      {/* Flipping Contact Form */}
+      <section className="py-8">
         <div className="container">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-16">
-            {contactInfo.map((info, index) => (
-              <Card key={index} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardHeader className="pb-4">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                    <info.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-xl">{info.title}</CardTitle>
-                  <CardDescription className="text-base font-semibold text-foreground">{info.details}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">{info.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <FlippingContactForm />
+        </div>
+      </section>
 
-          {/* Contact Form and Map */}
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <ContactForm />
-            </div>
-
-            <div className="space-y-8">
-              {/* Map Placeholder */}
-              <Card className="border-0 shadow-lg">
-                <CardHeader>
-                  <CardTitle className="text-xl">
-                    {/* Replaced hardcoded title with translation */}
-                    {t.contact.map.title}
-                  </CardTitle>
-                  <CardDescription>
-                    {/* Replaced hardcoded description with translation */}
-                    {t.contact.map.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="aspect-video rounded-lg overflow-hidden border-2 border-primary/20">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2662.938326073049!2d17.107748315648!3d48.14388897922371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476c895f0b0b0b0b%3A0x0!2sBratislava%20City%20Center!5e0!3m2!1sen!2ssk!4v1634567890123"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Bratislava City Center Map"
-                    />
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
+      {/* FAQ Section - 60% Width */}
+      <section id="faq" className="py-24">
+        <div className="container">
           {/* FAQ Section - 60% Width */}
           <div className="mt-16">
             <div className="text-center mb-8">

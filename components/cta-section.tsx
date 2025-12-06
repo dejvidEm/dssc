@@ -34,13 +34,13 @@ const CtaSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link 
-              href="#"to hla 
+              href="/contact"
               className="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-200 shadow-lg hover:shadow-xl"
             >
               {t.cta.primaryButton}
             </Link>
             <Link 
-              href="#" 
+              href="/services" 
               className="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-primary transition-colors duration-200"
             >
               {t.cta.secondaryButton}

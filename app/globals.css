@@ -130,6 +130,21 @@
     width: 100%;
     overflow-x: hidden;
   }
+  /* Prevent text cursor on text elements */
+  p, h1, h2, h3, h4, h5, h6, span, div, li, td, th, label, 
+  article, section, aside, header, footer, main, nav {
+    cursor: default;
+  }
+  /* Keep pointer cursor on interactive elements */
+  a, button, input, textarea, select, [role="button"], [onclick] {
+    cursor: pointer;
+  }
+  /* Keep default cursor on input fields for text selection */
+  input[type="text"], input[type="email"], input[type="password"], 
+  input[type="search"], input[type="tel"], input[type="url"], 
+  textarea {
+    cursor: text;
+  }
   .container {
     margin-left: auto;
     margin-right: auto;

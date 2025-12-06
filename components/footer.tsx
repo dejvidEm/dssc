@@ -2,6 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useLanguage } from '@/hooks/use-language'
+import { Instagram } from 'lucide-react'
 
 interface FooterItemProps {
   text: string
@@ -47,23 +48,23 @@ const getFooterBlocksFromTranslations = (t: any) => [
     items: [
         {
             text: t.footer.services.items.climateControl,
-            link: "#"
+            link: "/services"
         },
         {
             text: t.footer.services.items.security,
-            link: "#"
+            link: "/services"
         },
         {
             text: t.footer.services.items.flexibleRental,
-            link: "#"
+            link: "/services"
         },
         {
             text: t.footer.services.items.onlineManagement,
-            link: "#"
+            link: "/services"
         },
         {
             text: t.footer.services.items.movingSupplies,
-            link: "#"
+            link: "/services"
         },
     ]
 },
@@ -73,23 +74,11 @@ const getFooterBlocksFromTranslations = (t: any) => [
     items: [
         {
             text: t.footer.company.items.about,
-            link: "#"
-        },
-        {
-            text: t.footer.company.items.locations,
-            link: "#"
+            link: "/about"
         },
         {
             text: t.footer.company.items.contact,
-            link: "#"
-        },
-        {
-            text: t.footer.company.items.careers,
-            link: "#"
-        },
-        {
-            text: t.footer.company.items.news,
-            link: "#"
+            link: "/contact"
         },
     ]
 },
@@ -98,46 +87,12 @@ const getFooterBlocksFromTranslations = (t: any) => [
     title: t.footer.support.title,
     items: [
         {
-            text: t.footer.support.items.helpCenter,
-            link: "#"
-        },
-        {
             text: t.footer.support.items.faq,
-            link: "#"
+            link: "/contact#faq"
         },
         {
             text: t.footer.support.items.contactSupport,
-            link: "#"
-        },
-        {
-            text: t.footer.support.items.storageGuide,
-            link: "#"
-        },
-        {
-            text: t.footer.support.items.movingTips,
-            link: "#"
-        },
-    ]
-},
-{
-    id: 4,
-    title: t.footer.legal.title,
-    items: [
-        {
-            text: t.footer.legal.items.privacy,
-            link: "#"
-        },
-        {
-            text: t.footer.legal.items.terms,
-            link: "#"
-        },
-        {
-            text: t.footer.legal.items.accessibility,
-            link: "#"
-        },
-        {
-            text: t.footer.legal.items.sitemap,
-            link: "#"
+            link: "/contact"
         },
     ]
 },
@@ -153,7 +108,7 @@ const FooterBlock = () => {
         <div className="max-w-7xl mx-auto px-5 sm:px-10 md:px-12 lg:px-5">
             <div className="border-t border-t-gray-200 dark:border-t-gray-800 py-16 md:py-20 flex flex-col lg:flex-row gap-14 gap-y-16">
                 <div className="w-full lg:w-96 space-y-6">
-                    <Link href="#" className="flex items-center">
+                    <Link href="/" className="flex items-center">
                         <Image 
                             src="/dssc.png" 
                             alt="DSSCompany Logo" 
@@ -165,6 +120,17 @@ const FooterBlock = () => {
                     <p className="max-w-lg">
                         {t.footer.description}
                     </p>
+                    <div className="flex items-center gap-4">
+                        <a 
+                            href="https://www.instagram.com/_dsscompany_/" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-gray-700 dark:text-gray-300 hover:text-primary transition-colors"
+                            aria-label="Instagram"
+                        >
+                            <Instagram className="w-6 h-6" />
+                        </a>
+                    </div>
                 </div>
                 <nav className="flex-1 grid grid-cols-2 md:grid-cols-4 gap-10">
                     {

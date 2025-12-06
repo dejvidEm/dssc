@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/hooks/use-language"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ScrollToTop } from "@/components/scroll-to-top"
+import FollowCursor from "@/components/follow-cursor"
 import { Suspense } from "react"
 
 export const metadata: Metadata = {
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
       <body className="font-sans">
         <LanguageProvider>
+          <FollowCursor />
           <ScrollToTop />
           <div className="min-h-screen flex flex-col">
             <Suspense fallback={<div>Loading...</div>}>

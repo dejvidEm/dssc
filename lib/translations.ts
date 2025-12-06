@@ -51,6 +51,13 @@ export interface Translations {
     experience: string
     team: string
   }
+  expertise: {
+    label: string
+    title: string
+    paragraph1: string
+    paragraph3: string
+    paragraph4: string
+  }
   testimonials: {
     title: string
     subtitle: string
@@ -152,6 +159,7 @@ export interface Translations {
     pricing: {
       from: string
       month: string
+      basedOnAgreement: string
     }
     badges: {
       mostPopular: string
@@ -197,15 +205,34 @@ export interface Translations {
       }
     }
   }
-  contact: {
-    title: string
-    description: string
-    form: {
-      name: string
-      email: string
-      message: string
-      submit: string
-    }
+    contact: {
+      title: string
+      description: string
+      form: {
+        name: string
+        email: string
+        message: string
+        submit: string
+        companyName: string
+        companyNamePlaceholder: string
+        privacyPolicy: string
+        privacyPolicyText: string
+      }
+      cta: {
+        badge: string
+        contactButton: string
+        backButton: string
+        showContactInfo: string
+        contactInfoTitle: string
+      }
+      formFields: {
+        namePlaceholder: string
+        emailPlaceholder: string
+        messagePlaceholder: string
+        sending: string
+        success: string
+        successMessage: string
+      }
     info: {
       email: {
         title: string
@@ -364,6 +391,13 @@ export const translations: Record<Language, Translations> = {
       experience: "Rokov skúseností",
       team: "Ľudí k vašim službám",
     },
+    expertise: {
+      label: "Naše schopnosti",
+      title: "Pokročilé riešenia a individuálny prístup",
+      paragraph1: "Aj takéto pokročilé riešenia, ako hybridné zámky pre self storage boxy, zvládneme bez problémov.",
+      paragraph3: "V našej výrobe vieme prispôsobiť každý detail podľa požiadaviek zákazníka - od špecifických konštrukčných riešení až po farebné prevedenie všetkých komponentov. Máme bohaté skúsenosti aj s realizáciou unikátnych a inovatívnych projektov, ktoré pred nami ešte nikto nerobil.",
+      paragraph4: "Spojením našich skúseností, precíznosti a zmyslu pre detail vznikajú perfektne prepracované riešenia, ako je aj tento projekt s hybridnými zámkami - dôkaz, že kvalita a inovácie idú u nás ruka v ruke.",
+    },
     testimonials: {
       title: "Čo hovoria naši klienti",
       subtitle: "Prečítajte si skúsenosti našich spokojných klientov",
@@ -469,6 +503,7 @@ export const translations: Record<Language, Translations> = {
       pricing: {
         from: "Od",
         month: "mesiac",
+        basedOnAgreement: "Cena podľa dohody",
       },
       badges: {
         mostPopular: "Najpopulárnejšie",
@@ -522,6 +557,25 @@ export const translations: Record<Language, Translations> = {
         email: "Email",
         message: "Správa",
         submit: "Odoslať",
+        companyName: "Názov spoločnosti",
+        companyNamePlaceholder: "Názov vašej spoločnosti (voliteľné)",
+        privacyPolicy: "Súhlasím so spracovaním osobných údajov",
+        privacyPolicyText: "Súhlasím so spracovaním osobných údajov podľa",
+      },
+      cta: {
+        badge: "Kontakt",
+        contactButton: "Zobraziť formulár",
+        backButton: "Späť",
+        showContactInfo: "Zobraziť kontaktné informácie",
+        contactInfoTitle: "Kontaktné informácie",
+      },
+      formFields: {
+        namePlaceholder: "Vaše meno",
+        emailPlaceholder: "vas@email.sk",
+        messagePlaceholder: "Vaša správa...",
+        sending: "Odosielanie...",
+        success: "Ďakujeme!",
+        successMessage: "Čo najskôr sa vám ozveme.",
       },
       info: {
         email: {
@@ -569,10 +623,10 @@ export const translations: Record<Language, Translations> = {
     },
     cta: {
       title: "Pripravení začať s výstavbou bezpečných skladov?",
-      subtitle: "Rezervujte si výstavbu svojich skladovacích jednotiek ešte dnes a získajte prvý mesiac zdarma. Klimatizované jednotky, 24/7 bezpečnosť a flexibilné možnosti výstavby.",
+      subtitle: "Rezervujte si výstavbu svojich skladovacích jednotiek ešte dnes. Klimatizované jednotky, 24/7 bezpečnosť a flexibilné možnosti výstavby.",
       primaryButton: "Rezervovať výstavbu",
       secondaryButton: "Zobraziť ceny",
-      feature1: "Prvý mesiac zdarma",
+      feature1: "Klimatizované jednotky",
       feature2: "Bezpečnosť 24/7",
       feature3: "Flexibilná výstavba",
     },
@@ -679,6 +733,13 @@ export const translations: Record<Language, Translations> = {
       experience: "Years of Experience",
       team: "People at Your Service",
     },
+    expertise: {
+      label: "Our Expertise",
+      title: "Advanced Solutions and Custom Approach",
+      paragraph1: "We handle even the most advanced solutions, such as hybrid locks for self storage units, without any problems.",
+      paragraph3: "In our production, we can customize every detail according to customer requirements - from specific construction solutions to the color finish of all components. We also have extensive experience with unique and innovative projects that no one has done before us.",
+      paragraph4: "By combining our experience, precision, and attention to detail, we create perfectly crafted solutions, such as this hybrid lock project - proof that quality and innovation go hand in hand with us.",
+    },
     testimonials: {
       title: "What Our Clients Say",
       subtitle: "Read about the experiences of our satisfied clients",
@@ -784,6 +845,7 @@ export const translations: Record<Language, Translations> = {
       pricing: {
         from: "From",
         month: "month",
+        basedOnAgreement: "Price based on agreement",
       },
       badges: {
         mostPopular: "Most Popular",
@@ -837,6 +899,25 @@ export const translations: Record<Language, Translations> = {
         email: "Email",
         message: "Message",
         submit: "Send",
+        companyName: "Company Name",
+        companyNamePlaceholder: "Your company name (optional)",
+        privacyPolicy: "I agree to the processing of personal data",
+        privacyPolicyText: "I agree to the processing of personal data according to",
+      },
+      cta: {
+        badge: "Contact",
+        contactButton: "Show Form",
+        backButton: "Back",
+        showContactInfo: "Show Contact Info",
+        contactInfoTitle: "Contact Info",
+      },
+      formFields: {
+        namePlaceholder: "Your name",
+        emailPlaceholder: "your@email.com",
+        messagePlaceholder: "Your message...",
+        sending: "Sending...",
+        success: "Thank you!",
+        successMessage: "We'll get back to you as soon as possible.",
       },
       info: {
         email: {
@@ -884,10 +965,10 @@ export const translations: Record<Language, Translations> = {
     },
     cta: {
       title: "Ready to Start Secure Storage Construction?",
-      subtitle: "Reserve your storage unit construction today and get your first month free. Climate-controlled units, 24/7 security, and flexible construction options.",
+      subtitle: "Reserve your storage unit construction today. Climate-controlled units, 24/7 security, and flexible construction options.",
       primaryButton: "Reserve Construction",
       secondaryButton: "View Pricing",
-      feature1: "First month free",
+      feature1: "Climate-controlled units",
       feature2: "24/7 Security",
       feature3: "Flexible construction",
     },
@@ -994,6 +1075,13 @@ export const translations: Record<Language, Translations> = {
       experience: "Jahre Erfahrung",
       team: "Menschen zu Ihren Diensten",
     },
+    expertise: {
+      label: "Unsere Expertise",
+      title: "Fortschrittliche Lösungen und individueller Ansatz",
+      paragraph1: "Auch solche fortgeschrittenen Lösungen wie Hybridschlösser für Self-Storage-Einheiten bewältigen wir problemlos.",
+      paragraph3: "In unserer Produktion können wir jedes Detail nach Kundenwunsch anpassen - von spezifischen Konstruktionslösungen bis hin zur Farbausführung aller Komponenten. Wir haben auch umfangreiche Erfahrung mit einzigartigen und innovativen Projekten, die vor uns noch niemand umgesetzt hat.",
+      paragraph4: "Durch die Kombination unserer Erfahrung, Präzision und Liebe zum Detail entstehen perfekt ausgearbeitete Lösungen wie dieses Hybridschloss-Projekt - ein Beweis dafür, dass Qualität und Innovation bei uns Hand in Hand gehen.",
+    },
     testimonials: {
       title: "Was unsere Kunden sagen",
       subtitle: "Lesen Sie über die Erfahrungen unserer zufriedenen Kunden",
@@ -1099,6 +1187,7 @@ export const translations: Record<Language, Translations> = {
       pricing: {
         from: "Ab",
         month: "Monat",
+        basedOnAgreement: "Preis nach Vereinbarung",
       },
       badges: {
         mostPopular: "Am beliebtesten",
@@ -1152,6 +1241,25 @@ export const translations: Record<Language, Translations> = {
         email: "E-Mail",
         message: "Nachricht",
         submit: "Senden",
+        companyName: "Firmenname",
+        companyNamePlaceholder: "Ihr Firmenname (optional)",
+        privacyPolicy: "Ich stimme der Verarbeitung personenbezogener Daten zu",
+        privacyPolicyText: "Ich stimme der Verarbeitung personenbezogener Daten gemäß",
+      },
+      cta: {
+        badge: "Kontakt",
+        contactButton: "Formular anzeigen",
+        backButton: "Zurück",
+        showContactInfo: "Kontaktinformationen anzeigen",
+        contactInfoTitle: "Kontaktinformationen",
+      },
+      formFields: {
+        namePlaceholder: "Ihr Name",
+        emailPlaceholder: "ihr@email.de",
+        messagePlaceholder: "Ihre Nachricht...",
+        sending: "Wird gesendet...",
+        success: "Vielen Dank!",
+        successMessage: "Wir melden uns so schnell wie möglich bei Ihnen.",
       },
       info: {
         email: {
@@ -1200,10 +1308,10 @@ export const translations: Record<Language, Translations> = {
     },
     cta: {
       title: "Bereit für sichere Lagerbau?",
-      subtitle: "Reservieren Sie heute Ihren Lagerbau und erhalten Sie den ersten Monat kostenlos. Klimatisierte Einheiten, 24/7 Sicherheit und flexible Bauoptionen.",
+      subtitle: "Reservieren Sie heute Ihren Lagerbau. Klimatisierte Einheiten, 24/7 Sicherheit und flexible Bauoptionen.",
       primaryButton: "Bau reservieren",
       secondaryButton: "Preise anzeigen",
-      feature1: "Erster Monat kostenlos",
+      feature1: "Klimatisierte Einheiten",
       feature2: "24/7 Sicherheit",
       feature3: "Flexible Bau",
     },

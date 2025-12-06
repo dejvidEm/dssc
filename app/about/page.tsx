@@ -101,49 +101,6 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-
-      {/* Team Section */}
-      <section className="py-24">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl mb-4">
-              {t.about.team.title}
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground text-pretty">
-              {t.about.team.subtitle}
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[1, 2, 3].map((member) => (
-              <Card key={member} className="text-center border-0 shadow-lg hover:shadow-xl transition-all duration-300">
-                <CardHeader className="pb-4">
-                  <div className="mx-auto mb-4 h-24 w-24 rounded-full bg-primary/10 flex items-center justify-center border-2 border-primary/20">
-                    <div className="text-2xl font-bold text-primary">
-                      {member === 1 ? "JS" : member === 2 ? "AM" : "PK"}
-                    </div>
-                  </div>
-                  <CardTitle className="text-xl">
-                    {member === 1 ? t.about.team.member1.name : member === 2 ? t.about.team.member2.name : t.about.team.member3.name}
-                  </CardTitle>
-                  <CardDescription className="text-primary font-medium">
-                    {member === 1 ? t.about.team.member1.role : member === 2 ? t.about.team.member2.role : t.about.team.member3.role}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {member === 1
-                      ? t.about.team.member1.description
-                      : member === 2
-                        ? t.about.team.member2.description
-                        : t.about.team.member3.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

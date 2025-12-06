@@ -2,7 +2,6 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { PageHero } from "@/components/page-hero"
 import { useLanguage } from "@/hooks/use-language"
 import { CheckCircle, Users, Zap, ArrowRight, Clock, Shield, Lightbulb } from "lucide-react"
@@ -22,7 +21,6 @@ export default function ServicesPage() {
         t.services.features.riskAssessment,
         t.services.features.performanceOptimization,
       ],
-      price: `${t.services.pricing.from} €500`,
       popular: false,
     },
     {
@@ -35,7 +33,6 @@ export default function ServicesPage() {
         t.services.features.timelineManagement,
         t.services.features.resourceAllocation,
       ],
-      price: `${t.services.pricing.from} €1,500`,
       popular: true,
     },
     {
@@ -48,7 +45,6 @@ export default function ServicesPage() {
         t.services.features.maintenance,
         t.services.features.technicalAssistance,
       ],
-      price: `${t.services.pricing.from} €200/${t.services.pricing.month}`,
       popular: false,
     },
   ]
@@ -81,42 +77,36 @@ export default function ServicesPage() {
         <div className="container">
           <div className="grid gap-8 lg:grid-cols-3">
             {services.map((service, index) => (
-              <Card
-                key={index}
-                className={`relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
-                  service.popular ? "ring-2 ring-primary" : ""
-                }`}
-              >
-                {service.popular && (
-                  <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground">
-                    {t.services.badges.mostPopular}
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                    <service.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl">{service.title}</CardTitle>
-                  <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
-                  <div className="text-3xl font-bold text-primary mt-4">{service.price}</div>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <ul className="space-y-3">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button asChild className="w-full" variant={service.popular ? "default" : "outline"}>
-                    <Link href="/contact">
+              <Link key={index} href="/contact" className="block">
+                <Card
+                  className={`relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer ${
+                    service.popular ? "ring-2 ring-primary" : ""
+                  }`}
+                >
+                  <CardHeader className="text-center pb-4">
+                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                      <service.icon className="h-8 w-8 text-primary" />
+                    </div>
+                    <CardTitle className="text-2xl">{service.title}</CardTitle>
+                    <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
+                    <div className="text-lg font-semibold text-primary mt-4">{t.services.pricing.basedOnAgreement}</div>
+                  </CardHeader>
+                  <CardContent className="space-y-6">
+                    <ul className="space-y-3">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                          <span className="text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button className="w-full" variant={service.popular ? "default" : "outline"}>
                       {t.services.buttons.getStarted}
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
