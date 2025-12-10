@@ -51,6 +51,11 @@ export interface Translations {
     experience: string
     team: string
   }
+  investmentBanner: {
+    title: string
+    description: string
+    cta: string
+  }
   expertise: {
     label: string
     title: string
@@ -351,11 +356,16 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: "Bezpečné, čisté a pohodlné",
       subtitle: "Výstavba samoobslužných skladov",
-      description: "Staviame moderné samoobslužné skladovacie jednotky s klimatizáciou, 24/7 bezpečnosťou a flexibilnými možnosťami pre všetky vaše skladovacie potreby.",
+      description: "Firma s dlhoročnými skúsenosťami v oblasti self-storage. Našim klientom ponúkame odborné poradenstvo a kompletnú realizáciu stavieb – od prvotného návrhu až po finálne odovzdanie projektu. Vďaka nášmu know-how vieme navrhnúť efektívne riešenia, ktoré prinášajú stabilný výnos a dlhodobú bezpečnú investíciu.",
       cta1: "Rezervovať výstavbu",
       cta2: "Zobraziť ceny",
       employees: "45+ realizovaných projektov",
       reviews: "5.0 (2.5k recenzií)",
+    },
+    investmentBanner: {
+      title: "Prečo investovať do self-storage?",
+      description: "Self-storage je jeden z najrýchlejšie rastúcich realitných segmentov v Európe – nízke náklady, stabilné výnosy a neustále rastúci dopyt robia z tejto investície bezpečnú príležitosť s veľkým potenciálom.",
+      cta: "Kontaktovať nás",
     },
     features: {
       title: "Funkcie",
@@ -693,11 +703,16 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: "Secure, Clean & Convenient",
       subtitle: "Self Storage Construction",
-      description: "We build state-of-the-art self-storage facilities with climate-controlled units, 24/7 security, and flexible construction options to meet all your storage needs.",
+      description: "A company with years of experience in the self-storage industry. We offer our clients expert consulting and complete construction realization – from initial design to final project handover. Thanks to our know-how, we can design effective solutions that deliver stable returns and long-term secure investment.",
       cta1: "Reserve Construction",
       cta2: "View Pricing",
       employees: "45+ projects realized",
       reviews: "5.0 (2.5k reviews)",
+    },
+    investmentBanner: {
+      title: "Why invest in self-storage?",
+      description: "Self-storage is one of the fastest-growing real estate segments in Europe – low costs, stable returns, and continuously growing demand make this investment a secure opportunity with great potential.",
+      cta: "Contact us",
     },
     features: {
       title: "Features",
@@ -1035,11 +1050,16 @@ export const translations: Record<Language, Translations> = {
     hero: {
       title: "Sicher, sauber & bequem",
       subtitle: "Selbstlagerung Bau",
-      description: "Wir bauen moderne Selbstlagerungseinrichtungen mit klimatisierten Einheiten, 24/7 Sicherheit und flexiblen Bauoptionen für alle Ihre Lagerbedürfnisse.",
+      description: "Ein Unternehmen mit langjähriger Erfahrung im Bereich Self-Storage. Wir bieten unseren Kunden fachkundige Beratung und vollständige Bauausführung – vom ersten Entwurf bis zur finalen Projektübergabe. Dank unseres Know-hows können wir effektive Lösungen entwickeln, die stabile Erträge und langfristig sichere Investitionen bringen.",
       cta1: "Bau reservieren",
       cta2: "Preise anzeigen",
       employees: "45+ realisierte Projekte",
       reviews: "5.0 (2.5k Bewertungen)",
+    },
+    investmentBanner: {
+      title: "Warum in Self-Storage investieren?",
+      description: "Self-Storage ist eines der am schnellsten wachsenden Immobiliensegmente in Europa – niedrige Kosten, stabile Erträge und kontinuierlich steigende Nachfrage machen diese Investition zu einer sicheren Gelegenheit mit großem Potenzial.",
+      cta: "Kontaktieren Sie uns",
     },
     features: {
       title: "Funktionen",

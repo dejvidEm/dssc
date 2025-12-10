@@ -1,6 +1,7 @@
 "use client"
 
 import HeroSection from "@/components/hero-section"
+import { InvestmentBanner } from "@/components/investment-banner"
 import { VideoBanner } from "@/components/video-banner"
 import { FeaturesSection } from "@/components/features-section"
 import { StatsSection } from "@/components/stats-section"
@@ -15,6 +16,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <InvestmentBanner />
       <VideoBanner
         videoSrc="/video/main.mp4"
         onButtonClick={() => window.location.href = '/about'}

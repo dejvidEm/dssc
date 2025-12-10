@@ -39,7 +39,7 @@ export default function ContactPage() {
       <section className="py-8">
         <div className="container">
           <FlippingContactForm />
-        </div>
+                  </div>
       </section>
 
       {/* FAQ Section - 60% Width */}

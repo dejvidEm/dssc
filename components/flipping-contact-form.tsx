@@ -98,26 +98,6 @@ export function FlippingContactForm() {
               >
                 <div ref={formSideRef} className="relative rounded-2xl bg-card border border-border p-8 sm:p-12 lg:p-16 shadow-lg">
                   {/* Border made of grid lines */}
-                  <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute top-0 left-0 right-0 border-t border-border" />
-                    <div className="absolute bottom-0 left-0 right-0 border-b border-border" />
-                    <div className="absolute top-0 bottom-0 left-0 border-l border-border" />
-                    <div className="absolute top-0 bottom-0 right-0 border-r border-border" />
-                  </div>
-
-                  {/* Vertical grid lines decoration */}
-                  <div className="border-border absolute top-0 left-0 z-0 grid w-full grid-cols-[clamp(40px,12vw,140px)_auto_clamp(20px,6vw,80px)] pointer-events-none" style={{ minHeight: '100%' }}>
-                    <div className="col-span-1 flex min-h-full items-center justify-center border-r border-border" />
-                    <div className="border-border col-span-1 flex min-h-full items-center justify-center border-x" />
-                    <div className="col-span-1 flex min-h-full items-center justify-center border-l border-border" />
-                  </div>
-
-                  {/* Horizontal grid lines decoration */}
-                  <div className="absolute top-0 left-0 z-0 w-full pointer-events-none" style={{ minHeight: '100%' }}>
-                    <div className="absolute top-[clamp(20px,5vh,80px)] left-0 right-0 border-b border-border" />
-                    <div className="absolute bottom-[clamp(80px,15vh,160px)] left-0 right-0 border-t border-border" />
-                    <div className="absolute bottom-[clamp(50px,10vh,120px)] left-0 right-0 border-t border-border" />
-                  </div>
 
                   <div className="relative max-w-xl mx-auto z-10">
                     <div className="text-center mb-8">

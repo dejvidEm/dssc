@@ -157,12 +157,12 @@ export default function HeroSection() {
               fill
               className="object-cover rounded-lg" 
             />
-            <motion.div 
+          <motion.div 
               className="absolute left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 bottom-4 lg:bottom-8 z-10 w-60 p-4 rounded-lg bg-card border border-border shadow-lg hidden lg:block"
-              variants={statsVariants}
-              initial="hidden"
-              animate="visible"
-            >
+            variants={statsVariants}
+            initial="hidden"
+            animate="visible"
+          >
             <div className="flex children:ring-4 children:ring-card children:w-9 children:h-9 children:object-cover children:-ml-1 children:rounded-full">
               <Image src="/placeholder-user.jpg" alt="employee image" width={40} height={40} className="!-ml-0" />
             </div>
@@ -172,7 +172,7 @@ export default function HeroSection() {
                 <span className="text-yellow-500 text-xl">★</span> {t.hero.reviews}
               </p>
             </div>
-            </motion.div>
+          </motion.div>
           </Link>
         </motion.div>
       </div>

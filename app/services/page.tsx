@@ -78,34 +78,34 @@ export default function ServicesPage() {
           <div className="grid gap-8 lg:grid-cols-3">
             {services.map((service, index) => (
               <Link key={index} href="/contact" className="block">
-                <Card
+              <Card
                   className={`relative border-0 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer ${
-                    service.popular ? "ring-2 ring-primary" : ""
-                  }`}
-                >
-                  <CardHeader className="text-center pb-4">
-                    <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-                      <service.icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-2xl">{service.title}</CardTitle>
-                    <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
+                  service.popular ? "ring-2 ring-primary" : ""
+                }`}
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                    <service.icon className="h-8 w-8 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">{service.title}</CardTitle>
+                  <CardDescription className="text-base leading-relaxed">{service.description}</CardDescription>
                     <div className="text-lg font-semibold text-primary mt-4">{t.services.pricing.basedOnAgreement}</div>
-                  </CardHeader>
-                  <CardContent className="space-y-6">
-                    <ul className="space-y-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-3">
-                          <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                          <span className="text-sm">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  <ul className="space-y-3">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-3">
+                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
                     <Button className="w-full" variant={service.popular ? "default" : "outline"}>
                       {t.services.buttons.getStarted}
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </CardContent>
-                </Card>
+                  </Button>
+                </CardContent>
+              </Card>
               </Link>
             ))}
           </div>
