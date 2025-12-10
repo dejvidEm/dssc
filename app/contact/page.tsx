@@ -53,7 +53,7 @@ export default function ContactPage() {
               </h2>
             </div>
             <div className="flex justify-center">
-              <div className="w-full max-w-[60%] space-y-4">
+              <div className="w-full max-w-4xl space-y-4">
               {faqItems.map((item, index) => (
                 <Card key={index} className="border-0 shadow-lg">
                   <CardContent className="p-0">
@@ -88,14 +88,14 @@ export default function ContactPage() {
 
       {/* CTA Section */}
       <section className="py-24 bg-muted/30">
-        <div className="container text-center">
-          <div className="mx-auto max-w-3xl space-y-8">
+        <div className="px-5 sm:px-10 md:px-12 lg:px-5 text-center">
+          <div className="mx-auto w-full max-w-3xl space-y-8">
             <h2 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl lg:text-5xl">
               {t.cta.title}
             </h2>
             <p className="text-lg text-muted-foreground text-pretty sm:text-xl">{t.cta.subtitle}</p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
-              <Card className="p-6 border-0 shadow-lg">
+              <Card className="p-6 border-0 shadow-lg w-full sm:w-auto">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
                     <Phone className="h-6 w-6 text-primary" />
@@ -109,7 +109,7 @@ export default function ContactPage() {
                   </div>
                 </div>
               </Card>
-              <Card className="p-6 border-0 shadow-lg">
+              <Card className="p-6 border-0 shadow-lg w-full sm:w-auto">
                 <div className="flex items-center gap-4">
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/10">
                     <Mail className="h-6 w-6 text-secondary" />
