@@ -169,6 +169,29 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
     const onWindowResize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
+      
+      // Check if device became mobile and hide cursor if so
+      const isMobile = window.matchMedia('(pointer: coarse)').matches || 
+                       window.matchMedia('(max-width: 1024px)').matches ||
+                       'ontouchstart' in window ||
+                       navigator.maxTouchPoints > 0;
+      
+      if (isMobile && canvas) {
+        // Hide canvas on mobile without destroying listeners
+        canvas.style.display = 'none';
+        if (animationFrame) cancelAnimationFrame(animationFrame);
+        return;
+      }
+      
+      // Show canvas if it was hidden and we're back on desktop
+      if (canvas && canvas.style.display === 'none') {
+        canvas.style.display = 'block';
+        if (!animationFrame) {
+          lastTime = performance.now();
+          animationFrame = requestAnimationFrame(loop);
+        }
+      }
+      
       if (canvas) {
         canvas.width = width;
         canvas.height = height;
@@ -257,6 +280,17 @@ const FollowCursor: React.FC<FollowCursorProps> = ({
     const init = () => {
       if (prefersReducedMotion.matches) {
         console.log('Reduced motion enabled, cursor effect skipped.');
+        return;
+      }
+
+      // Check if device is mobile/touch device
+      const isMobile = window.matchMedia('(pointer: coarse)').matches || 
+                       window.matchMedia('(max-width: 1024px)').matches ||
+                       'ontouchstart' in window ||
+                       navigator.maxTouchPoints > 0;
+      
+      if (isMobile) {
+        console.log('Mobile device detected, cursor effect skipped.');
         return;
       }
 

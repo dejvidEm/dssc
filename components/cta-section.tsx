@@ -47,7 +47,7 @@ const CtaSection = () => {
             </Link>
           </div>
           
-          <div className="flex items-center justify-center space-x-8 text-white/90">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 md:space-x-8 text-white/90">
             <div className="flex items-center space-x-2">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
